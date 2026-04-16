@@ -1,0 +1,863 @@
+{
+  "model": "EleutherAI/pythia-2.8b-deduped",
+  "families": {
+    "arithmetic": {
+      "alin": 0.0,
+      "max_dp": 5.40384377245573e-08,
+      "best_layer": 0,
+      "target": "1",
+      "direction_magnitude": 0.9882851839065552,
+      "cd_target_logit": -1.884596824645996,
+      "cd_target_rank": 43288,
+      "cd_top5": [
+        [
+          "aughters",
+          10.373735427856445
+        ],
+        [
+          "Sheet",
+          10.196407318115234
+        ],
+        [
+          "orect",
+          10.04828929901123
+        ],
+        [
+          "elbows",
+          9.820040702819824
+        ],
+        [
+          "iben",
+          9.730159759521484
+        ]
+      ],
+      "collateral_kl_mean": 0.005934969987720251,
+      "collateral_kl_std": 0.0029061075765639544
+    },
+    "c_age": {
+      "alin": 0.0,
+      "max_dp": 3.375860978849232e-05,
+      "best_layer": 0,
+      "target": "modern",
+      "direction_magnitude": 2.36515474319458,
+      "cd_target_logit": -3.5358893871307373,
+      "cd_target_rank": 46438,
+      "cd_top5": [
+        [
+          "\u00e9gal",
+          9.133135795593262
+        ],
+        [
+          "PATH",
+          8.91353988647461
+        ],
+        [
+          "osph",
+          8.859044075012207
+        ],
+        [
+          "ilers",
+          8.780069351196289
+        ],
+        [
+          "nex",
+          8.758018493652344
+        ]
+      ],
+      "collateral_kl_mean": 0.007227511610835791,
+      "collateral_kl_std": 0.003984932787716389
+    },
+    "c_continent": {
+      "alin": 0.5222222222222223,
+      "max_dp": 0.21536444127559662,
+      "best_layer": 21,
+      "target": "Europe",
+      "direction_magnitude": 22.106796264648438,
+      "cd_target_logit": 17.219215393066406,
+      "cd_target_rank": 13,
+      "cd_top5": [
+        [
+          "\u20ac",
+          21.550809860229492
+        ],
+        [
+          "Slov",
+          19.567962646484375
+        ],
+        [
+          "Croatia",
+          19.413084030151367
+        ],
+        [
+          "Austria",
+          18.853229522705078
+        ],
+        [
+          "EUR",
+          18.200611114501953
+        ]
+      ],
+      "collateral_kl_mean": 0.05152757093310356,
+      "collateral_kl_std": 0.056691307574510574
+    },
+    "c_danger": {
+      "alin": 0.0,
+      "max_dp": 0.001803856692276895,
+      "best_layer": 0,
+      "target": "safe",
+      "direction_magnitude": 0.7805088758468628,
+      "cd_target_logit": -2.2893800735473633,
+      "cd_target_rank": 33121,
+      "cd_top5": [
+        [
+          "oo",
+          10.026874542236328
+        ],
+        [
+          "*",
+          9.25564956665039
+        ],
+        [
+          "*",
+          8.201192855834961
+        ],
+        [
+          "ont",
+          7.759337425231934
+        ],
+        [
+          "pair",
+          7.756702899932861
+        ]
+      ],
+      "collateral_kl_mean": 0.005632433108985424,
+      "collateral_kl_std": 0.0028274368960410357
+    },
+    "c_daynight": {
+      "alin": 0.14772727272727273,
+      "max_dp": 0.0461004339158535,
+      "best_layer": 24,
+      "target": "night",
+      "direction_magnitude": 22.90730857849121,
+      "cd_target_logit": 24.40716552734375,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "night",
+          24.40716552734375
+        ],
+        [
+          "Night",
+          22.0859317779541
+        ],
+        [
+          "noct",
+          21.153209686279297
+        ],
+        [
+          "sleep",
+          21.136871337890625
+        ],
+        [
+          "Night",
+          20.51327133178711
+        ]
+      ],
+      "collateral_kl_mean": 0.03682641312479973,
+      "collateral_kl_std": 0.018303945660591125
+    },
+    "c_gender": {
+      "alin": 0.5,
+      "max_dp": 0.07968416810035706,
+      "best_layer": 22,
+      "target": "she",
+      "direction_magnitude": 20.53772735595703,
+      "cd_target_logit": 48.9539909362793,
+      "cd_target_rank": 3,
+      "cd_top5": [
+        [
+          "herself",
+          58.9361572265625
+        ],
+        [
+          "her",
+          52.482418060302734
+        ],
+        [
+          "she",
+          48.9539909362793
+        ],
+        [
+          "she",
+          40.23976135253906
+        ],
+        [
+          "hers",
+          35.56169128417969
+        ]
+      ],
+      "collateral_kl_mean": 0.0269892830401659,
+      "collateral_kl_std": 0.012697377242147923
+    },
+    "c_habitat": {
+      "alin": 0.017045454545454544,
+      "max_dp": 0.009311669506132603,
+      "best_layer": 21,
+      "target": "water",
+      "direction_magnitude": 30.896055221557617,
+      "cd_target_logit": 11.76685619354248,
+      "cd_target_rank": 95,
+      "cd_top5": [
+        [
+          "underwater",
+          23.217451095581055
+        ],
+        [
+          "swim",
+          22.061059951782227
+        ],
+        [
+          "seaw",
+          21.67291259765625
+        ],
+        [
+          "fish",
+          21.02884292602539
+        ],
+        [
+          "marine",
+          20.901697158813477
+        ]
+      ],
+      "collateral_kl_mean": 0.08105979114770889,
+      "collateral_kl_std": 0.057657431811094284
+    },
+    "c_hardness": {
+      "alin": 0.028409090909090908,
+      "max_dp": 0.007804581895470619,
+      "best_layer": 31,
+      "target": "soft",
+      "direction_magnitude": 23.895381927490234,
+      "cd_target_logit": 5.5004496574401855,
+      "cd_target_rank": 1008,
+      "cd_top5": [
+        [
+          "cotton",
+          15.640514373779297
+        ],
+        [
+          "wool",
+          14.021195411682129
+        ],
+        [
+          "towels",
+          13.741902351379395
+        ],
+        [
+          "sweater",
+          12.683624267578125
+        ],
+        [
+          "towel",
+          12.494527816772461
+        ]
+      ],
+      "collateral_kl_mean": 0.030865345150232315,
+      "collateral_kl_std": 0.024198560044169426
+    },
+    "c_indoor": {
+      "alin": 0.028409090909090908,
+      "max_dp": 0.009396926499903202,
+      "best_layer": 31,
+      "target": "outdoor",
+      "direction_magnitude": 25.647037506103516,
+      "cd_target_logit": 6.130666732788086,
+      "cd_target_rank": 493,
+      "cd_top5": [
+        [
+          "downhill",
+          13.892112731933594
+        ],
+        [
+          "kay",
+          13.225712776184082
+        ],
+        [
+          "hiking",
+          13.096531867980957
+        ],
+        [
+          "sport",
+          13.051066398620605
+        ],
+        [
+          "mount",
+          12.91540241241455
+        ]
+      ],
+      "collateral_kl_mean": 0.049203213304281235,
+      "collateral_kl_std": 0.040810711681842804
+    },
+    "c_material": {
+      "alin": 0.23863636363636365,
+      "max_dp": 0.16552874445915222,
+      "best_layer": 31,
+      "target": "wood",
+      "direction_magnitude": 34.44495391845703,
+      "cd_target_logit": 7.831573009490967,
+      "cd_target_rank": 106,
+      "cd_top5": [
+        [
+          "boards",
+          14.533563613891602
+        ],
+        [
+          "pine",
+          13.384586334228516
+        ],
+        [
+          "lumber",
+          12.458375930786133
+        ],
+        [
+          "logs",
+          12.228307723999023
+        ],
+        [
+          "\ufffd",
+          11.73945426940918
+        ]
+      ],
+      "collateral_kl_mean": 0.06091118976473808,
+      "collateral_kl_std": 0.038353171199560165
+    },
+    "c_moisture": {
+      "alin": 0.005681818181818182,
+      "max_dp": 0.002401659032329917,
+      "best_layer": 31,
+      "target": "dry",
+      "direction_magnitude": 19.650386810302734,
+      "cd_target_logit": 4.24510383605957,
+      "cd_target_rank": 1230,
+      "cd_top5": [
+        [
+          "toasted",
+          15.092583656311035
+        ],
+        [
+          "shredded",
+          12.480462074279785
+        ],
+        [
+          "dust",
+          12.143970489501953
+        ],
+        [
+          "bisc",
+          11.641242027282715
+        ],
+        [
+          "roasted",
+          11.62464427947998
+        ]
+      ],
+      "collateral_kl_mean": 0.03251811861991882,
+      "collateral_kl_std": 0.035538919270038605
+    },
+    "c_natural": {
+      "alin": 0.0,
+      "max_dp": 0.00012900674482807517,
+      "best_layer": 0,
+      "target": "artificial",
+      "direction_magnitude": 1.220230221748352,
+      "cd_target_logit": 1.011580228805542,
+      "cd_target_rank": 13874,
+      "cd_top5": [
+        [
+          "overs",
+          9.380265235900879
+        ],
+        [
+          "sound",
+          8.902864456176758
+        ],
+        [
+          "INDEX",
+          8.596708297729492
+        ],
+        [
+          "Pri",
+          8.59151840209961
+        ],
+        [
+          "layout",
+          8.588769912719727
+        ]
+      ],
+      "collateral_kl_mean": 0.005981932394206524,
+      "collateral_kl_std": 0.0028762375004589558
+    },
+    "c_parity": {
+      "alin": 0.21428571428571427,
+      "max_dp": 0.022972114384174347,
+      "best_layer": 30,
+      "target": "odd",
+      "direction_magnitude": 8.317458152770996,
+      "cd_target_logit": 1.9675601720809937,
+      "cd_target_rank": 10383,
+      "cd_top5": [
+        [
+          "471",
+          11.712573051452637
+        ],
+        [
+          "331",
+          11.594775199890137
+        ],
+        [
+          "93",
+          11.481847763061523
+        ],
+        [
+          "2019",
+          11.202838897705078
+        ],
+        [
+          "113",
+          11.164467811584473
+        ]
+      ],
+      "collateral_kl_mean": 0.010945940390229225,
+      "collateral_kl_std": 0.008243010379374027
+    },
+    "c_phase": {
+      "alin": 0.05113636363636364,
+      "max_dp": 0.022836005315184593,
+      "best_layer": 31,
+      "target": "liquid",
+      "direction_magnitude": 27.008913040161133,
+      "cd_target_logit": 8.248470306396484,
+      "cd_target_rank": 131,
+      "cd_top5": [
+        [
+          "beverage",
+          13.946999549865723
+        ],
+        [
+          "alcoholic",
+          12.945484161376953
+        ],
+        [
+          "alcohol",
+          12.741262435913086
+        ],
+        [
+          "beverages",
+          12.644805908203125
+        ],
+        [
+          "alcoh",
+          12.585169792175293
+        ]
+      ],
+      "collateral_kl_mean": 0.03710296377539635,
+      "collateral_kl_std": 0.02392716333270073
+    },
+    "c_plant": {
+      "alin": 0.32386363636363635,
+      "max_dp": 0.002900657244026661,
+      "best_layer": 22,
+      "target": "animal",
+      "direction_magnitude": 44.252132415771484,
+      "cd_target_logit": 9.16855239868164,
+      "cd_target_rank": 55,
+      "cd_top5": [
+        [
+          "prey",
+          15.879626274108887
+        ],
+        [
+          "predator",
+          15.342111587524414
+        ],
+        [
+          "predators",
+          13.838876724243164
+        ],
+        [
+          "dogs",
+          12.991609573364258
+        ],
+        [
+          "meat",
+          12.423047065734863
+        ]
+      ],
+      "collateral_kl_mean": 0.16660062968730927,
+      "collateral_kl_std": 0.13717494904994965
+    },
+    "c_plural": {
+      "alin": 0.18181818181818182,
+      "max_dp": 0.0454728938639164,
+      "best_layer": 31,
+      "target": "plural",
+      "direction_magnitude": 9.560059547424316,
+      "cd_target_logit": 10.56134033203125,
+      "cd_target_rank": 4,
+      "cd_top5": [
+        [
+          "timely",
+          11.719595909118652
+        ],
+        [
+          "parallel",
+          11.04281234741211
+        ],
+        [
+          "subjects",
+          10.91688060760498
+        ],
+        [
+          "plural",
+          10.56134033203125
+        ],
+        [
+          "Reagan",
+          9.997451782226562
+        ]
+      ],
+      "collateral_kl_mean": 0.010424073785543442,
+      "collateral_kl_std": 0.003889910876750946
+    },
+    "c_sentiment": {
+      "alin": 0.0,
+      "max_dp": 0.006869375240057707,
+      "best_layer": 0,
+      "target": "negative",
+      "direction_magnitude": 0.5886423587799072,
+      "cd_target_logit": 1.9213918447494507,
+      "cd_target_rank": 8030,
+      "cd_top5": [
+        [
+          "ODULE",
+          10.80039119720459
+        ],
+        [
+          "ESH",
+          10.261796951293945
+        ],
+        [
+          "spl",
+          9.13171672821045
+        ],
+        [
+          "inters",
+          9.047781944274902
+        ],
+        [
+          "ump",
+          9.000441551208496
+        ]
+      ],
+      "collateral_kl_mean": 0.006137492600828409,
+      "collateral_kl_std": 0.0037059891037642956
+    },
+    "c_shape": {
+      "alin": 0.0,
+      "max_dp": 0.0014717548619955778,
+      "best_layer": 0,
+      "target": "flat",
+      "direction_magnitude": 1.3114924430847168,
+      "cd_target_logit": 3.548616886138916,
+      "cd_target_rank": 4834,
+      "cd_top5": [
+        [
+          "ippi",
+          11.79910945892334
+        ],
+        [
+          "ffield",
+          9.753286361694336
+        ],
+        [
+          "\u00e8s",
+          9.491931915283203
+        ],
+        [
+          "opan",
+          9.404976844787598
+        ],
+        [
+          "qn",
+          9.392097473144531
+        ]
+      ],
+      "collateral_kl_mean": 0.006353417411446571,
+      "collateral_kl_std": 0.003478779923170805
+    },
+    "c_size": {
+      "alin": 0.11931818181818182,
+      "max_dp": 0.011055244132876396,
+      "best_layer": 20,
+      "target": "small",
+      "direction_magnitude": 22.65230369567871,
+      "cd_target_logit": 9.555438041687012,
+      "cd_target_rank": 24,
+      "cd_top5": [
+        [
+          "tiny",
+          13.504907608032227
+        ],
+        [
+          "Tiny",
+          12.994782447814941
+        ],
+        [
+          "microscopic",
+          11.516594886779785
+        ],
+        [
+          "micron",
+          11.506719589233398
+        ],
+        [
+          "microsc",
+          11.392922401428223
+        ]
+      ],
+      "collateral_kl_mean": 0.062383703887462616,
+      "collateral_kl_std": 0.04771674796938896
+    },
+    "c_speed": {
+      "alin": 0.011363636363636364,
+      "max_dp": 0.003228957299143076,
+      "best_layer": 20,
+      "target": "slow",
+      "direction_magnitude": 19.38691520690918,
+      "cd_target_logit": 4.33574104309082,
+      "cd_target_rank": 1474,
+      "cd_top5": [
+        [
+          "aquatic",
+          12.479427337646484
+        ],
+        [
+          "moll",
+          11.371001243591309
+        ],
+        [
+          "sess",
+          11.0040922164917
+        ],
+        [
+          "species",
+          10.904165267944336
+        ],
+        [
+          "living",
+          10.80311393737793
+        ]
+      ],
+      "collateral_kl_mean": 0.04387572780251503,
+      "collateral_kl_std": 0.02902885153889656
+    },
+    "c_taste": {
+      "alin": 0.1590909090909091,
+      "max_dp": 0.016895152628421783,
+      "best_layer": 31,
+      "target": "sour",
+      "direction_magnitude": 21.88670539855957,
+      "cd_target_logit": 13.010643005371094,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "sour",
+          13.010643005371094
+        ],
+        [
+          "fer",
+          12.14822006225586
+        ],
+        [
+          "vine",
+          11.809965133666992
+        ],
+        [
+          "tang",
+          11.78974437713623
+        ],
+        [
+          "acidic",
+          11.333369255065918
+        ]
+      ],
+      "collateral_kl_mean": 0.03148085996508598,
+      "collateral_kl_std": 0.01617477461695671
+    },
+    "c_temperature": {
+      "alin": 0.011363636363636364,
+      "max_dp": 0.010171128436923027,
+      "best_layer": 20,
+      "target": "cold",
+      "direction_magnitude": 14.886861801147461,
+      "cd_target_logit": 12.02499008178711,
+      "cd_target_rank": 29,
+      "cd_top5": [
+        [
+          "ice",
+          26.061365127563477
+        ],
+        [
+          "snow",
+          24.12436866760254
+        ],
+        [
+          "Ice",
+          22.220441818237305
+        ],
+        [
+          "icy",
+          22.157629013061523
+        ],
+        [
+          "Ice",
+          21.549226760864258
+        ]
+      ],
+      "collateral_kl_mean": 0.03136914223432541,
+      "collateral_kl_std": 0.028643503785133362
+    },
+    "c_volume": {
+      "alin": 0.0,
+      "max_dp": 0.0002003245463129133,
+      "best_layer": 0,
+      "target": "quiet",
+      "direction_magnitude": 1.3117462396621704,
+      "cd_target_logit": -0.2756565809249878,
+      "cd_target_rank": 16612,
+      "cd_top5": [
+        [
+          "_",
+          10.260571479797363
+        ],
+        [
+          "Hel",
+          9.793021202087402
+        ],
+        [
+          "arg",
+          8.570563316345215
+        ],
+        [
+          "al",
+          8.551432609558105
+        ],
+        [
+          "ox",
+          8.208909034729004
+        ]
+      ],
+      "collateral_kl_mean": 0.006015416234731674,
+      "collateral_kl_std": 0.003757709404453635
+    },
+    "c_weight": {
+      "alin": 0.0,
+      "max_dp": 0.0014239952433854342,
+      "best_layer": 0,
+      "target": "light",
+      "direction_magnitude": 1.2073428630828857,
+      "cd_target_logit": -1.3344345092773438,
+      "cd_target_rank": 27631,
+      "cd_top5": [
+        [
+          "media",
+          8.643362998962402
+        ],
+        [
+          "par",
+          8.507439613342285
+        ],
+        [
+          "-",
+          8.50732421875
+        ],
+        [
+          "Par",
+          7.982946395874023
+        ],
+        [
+          "---",
+          7.840505599975586
+        ]
+      ],
+      "collateral_kl_mean": 0.005991788115352392,
+      "collateral_kl_std": 0.003067152574658394
+    },
+    "geography": {
+      "alin": 0.548,
+      "max_dp": 0.1959652453660965,
+      "best_layer": 31,
+      "target": "Spanish",
+      "direction_magnitude": 53.812957763671875,
+      "cd_target_logit": 22.65705680847168,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "Spanish",
+          22.65705680847168
+        ],
+        [
+          "Spanish",
+          21.16302490234375
+        ],
+        [
+          "Spani",
+          16.480398178100586
+        ],
+        [
+          "Que",
+          16.35198974609375
+        ],
+        [
+          "Cast",
+          15.547411918640137
+        ]
+      ],
+      "collateral_kl_mean": 0.16398963332176208,
+      "collateral_kl_std": 0.14293484389781952
+    },
+    "sequence": {
+      "alin": 0.8528678304239401,
+      "max_dp": 0.10878491401672363,
+      "best_layer": 31,
+      "target": "November",
+      "direction_magnitude": 46.130271911621094,
+      "cd_target_logit": 21.44281005859375,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "November",
+          21.44281005859375
+        ],
+        [
+          "November",
+          18.552593231201172
+        ],
+        [
+          "Nov",
+          13.776854515075684
+        ],
+        [
+          "Nich",
+          12.957975387573242
+        ],
+        [
+          "December",
+          12.93588638305664
+        ]
+      ],
+      "collateral_kl_mean": 0.13292847573757172,
+      "collateral_kl_std": 0.10718927532434464
+    }
+  }
+}

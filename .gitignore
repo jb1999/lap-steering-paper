@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# Build / lock
+dist/
+build/
+*.egg
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Logs from re-runs (results/*.json are kept as the reference baseline)
+runall_log*.txt
+*.log
+
+# Large regenerable activation cache (~600MB; produced by run_emergence.py)
+results/exp1/gpu_cache/
+
+# Run checkpoint (allows resume; not part of reproducibility baseline)
+results/.run_all_checkpoint.json
+
+# Generated figures (sanity-check PNGs/PDFs; the paper pulls from CSV via pgfplots)
+figures/
+
+# Default output of generate_paper_csvs.py
+paper_csvs/

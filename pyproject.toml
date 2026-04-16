@@ -1,0 +1,46 @@
+[project]
+name = "lap-steering-paper"
+version = "1.0.0"
+description = "Reproduction code for: Predicting Where Steering Vectors Succeed"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Jayadev Billa" }]
+requires-python = ">=3.10"
+
+[project.urls]
+Repository = "https://github.com/jb1999/lap-steering-paper"
+Issues = "https://github.com/jb1999/lap-steering-paper/issues"
+dependencies = [
+    "torch>=2.1,<2.6",
+    "transformers>=4.40",
+    "datasets>=2.19",
+    "accelerate>=0.28",
+    "scikit-learn>=1.4",
+    "scipy>=1.12",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "nltk>=3.8",
+    "tqdm>=4.66",
+    "safetensors>=0.5",
+    "einops>=0.8",
+    "huggingface-hub<1.0.0",
+    "sentencepiece>=0.1.99",
+    "protobuf>=3.20",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ipython", "jupyter"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.uv]
+override-dependencies = [
+    "torch>=2.1,<2.6",
+    "transformers>=4.40,<4.51",
+]

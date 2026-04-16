@@ -1,0 +1,896 @@
+{
+  "model": "google/gemma-2-2b",
+  "families": {
+    "arithmetic": {
+      "alin": 0.698,
+      "max_dp": 0.11768266558647156,
+      "best_layer": 23,
+      "target": "1",
+      "direction_magnitude": 149.03636169433594,
+      "cd_target_logit": 22.35051727294922,
+      "cd_target_rank": 21,
+      "cd_top5": [
+        [
+          "IsContent",
+          34.79652786254883
+        ],
+        [
+          "AndEndTag",
+          34.65753173828125
+        ],
+        [
+          "\u0648\u06cc\u06a9\u06cc\u200c\u067e\u062f\u06cc",
+          32.006065368652344
+        ],
+        [
+          "kasarigan",
+          28.973920822143555
+        ],
+        [
+          "One",
+          28.734210968017578
+        ]
+      ],
+      "collateral_kl_mean": 0.060405291616916656,
+      "collateral_kl_std": 0.03869686648249626
+    },
+    "c_age": {
+      "alin": 0.0,
+      "max_dp": 0.00014551839558407664,
+      "best_layer": 0,
+      "target": "modern",
+      "direction_magnitude": 4.268976211547852,
+      "cd_target_logit": -5.83745813369751,
+      "cd_target_rank": 176814,
+      "cd_top5": [
+        [
+          "/***/",
+          26.902408599853516
+        ],
+        [
+          "pageContext",
+          22.700151443481445
+        ],
+        [
+          "\u201c",
+          22.639347076416016
+        ],
+        [
+          "as",
+          22.04506492614746
+        ],
+        [
+          "as",
+          21.666379928588867
+        ]
+      ],
+      "collateral_kl_mean": 0.001298138522543013,
+      "collateral_kl_std": 0.0008358094491995871
+    },
+    "c_animal": {
+      "alin": 0.415,
+      "max_dp": 0.1322496384382248,
+      "best_layer": 25,
+      "target": "mammal",
+      "direction_magnitude": 57.812278747558594,
+      "cd_target_logit": 21.29408073425293,
+      "cd_target_rank": 8,
+      "cd_top5": [
+        [
+          "mammals",
+          23.853540420532227
+        ],
+        [
+          "scrapy",
+          22.750350952148438
+        ],
+        [
+          "Mammal",
+          22.62868309020996
+        ],
+        [
+          "paws",
+          22.54804229736328
+        ],
+        [
+          "Mammal",
+          22.240379333496094
+        ]
+      ],
+      "collateral_kl_mean": 0.009593375027179718,
+      "collateral_kl_std": 0.009520617313683033
+    },
+    "c_continent": {
+      "alin": 0.4111111111111111,
+      "max_dp": 0.19848597049713135,
+      "best_layer": 21,
+      "target": "Europe",
+      "direction_magnitude": 112.47314453125,
+      "cd_target_logit": 35.682411193847656,
+      "cd_target_rank": 3,
+      "cd_top5": [
+        [
+          "European",
+          36.87849044799805
+        ],
+        [
+          "EU",
+          36.129844665527344
+        ],
+        [
+          "Europe",
+          35.682411193847656
+        ],
+        [
+          "European",
+          34.2080078125
+        ],
+        [
+          "Euro",
+          33.1733283996582
+        ]
+      ],
+      "collateral_kl_mean": 0.059360992163419724,
+      "collateral_kl_std": 0.08583346754312515
+    },
+    "c_danger": {
+      "alin": 0.0,
+      "max_dp": 0.0013181139947846532,
+      "best_layer": 0,
+      "target": "safe",
+      "direction_magnitude": 1.8181378841400146,
+      "cd_target_logit": 3.9384052753448486,
+      "cd_target_rank": 135201,
+      "cd_top5": [
+        [
+          "Efq",
+          37.976905822753906
+        ],
+        [
+          "my\u017felf",
+          37.14008712768555
+        ],
+        [
+          "bibfield",
+          32.279258728027344
+        ],
+        [
+          "it\u017felf",
+          32.15873336791992
+        ],
+        [
+          "plea\u017fure",
+          31.57842445373535
+        ]
+      ],
+      "collateral_kl_mean": 0.0010490687564015388,
+      "collateral_kl_std": 0.000834137958008796
+    },
+    "c_daynight": {
+      "alin": 0.13068181818181818,
+      "max_dp": 0.06398601830005646,
+      "best_layer": 22,
+      "target": "night",
+      "direction_magnitude": 97.1005859375,
+      "cd_target_logit": 61.29423141479492,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "night",
+          61.29423141479492
+        ],
+        [
+          "Night",
+          60.20294189453125
+        ],
+        [
+          "Night",
+          59.5284309387207
+        ],
+        [
+          "NIGHT",
+          55.246826171875
+        ],
+        [
+          "night",
+          54.88126754760742
+        ]
+      ],
+      "collateral_kl_mean": 0.03261031582951546,
+      "collateral_kl_std": 0.02630341611802578
+    },
+    "c_gender": {
+      "alin": 0.4947916666666667,
+      "max_dp": 0.15098778903484344,
+      "best_layer": 22,
+      "target": "she",
+      "direction_magnitude": 84.3898696899414,
+      "cd_target_logit": 117.96145629882812,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "she",
+          117.96145629882812
+        ],
+        [
+          "her",
+          106.68473052978516
+        ],
+        [
+          "herself",
+          102.18616485595703
+        ],
+        [
+          "she",
+          88.03730010986328
+        ],
+        [
+          "herself",
+          79.595947265625
+        ]
+      ],
+      "collateral_kl_mean": 0.017595872282981873,
+      "collateral_kl_std": 0.01975291222333908
+    },
+    "c_habitat": {
+      "alin": 0.005681818181818182,
+      "max_dp": 0.008145430125296116,
+      "best_layer": 18,
+      "target": "water",
+      "direction_magnitude": 69.85667419433594,
+      "cd_target_logit": 31.677753448486328,
+      "cd_target_rank": 93,
+      "cd_top5": [
+        [
+          "underwater",
+          48.91481018066406
+        ],
+        [
+          "ocean",
+          47.848880767822266
+        ],
+        [
+          "seawater",
+          47.8341178894043
+        ],
+        [
+          "fish",
+          45.298133850097656
+        ],
+        [
+          "fish",
+          43.525352478027344
+        ]
+      ],
+      "collateral_kl_mean": 0.05403948202729225,
+      "collateral_kl_std": 0.060538917779922485
+    },
+    "c_hardness": {
+      "alin": 0.0625,
+      "max_dp": 0.016836564987897873,
+      "best_layer": 25,
+      "target": "soft",
+      "direction_magnitude": 50.52248764038086,
+      "cd_target_logit": 32.150882720947266,
+      "cd_target_rank": 30,
+      "cd_top5": [
+        [
+          "cotton",
+          43.03371810913086
+        ],
+        [
+          "fluffy",
+          41.6934928894043
+        ],
+        [
+          "plush",
+          40.085941314697266
+        ],
+        [
+          "fluff",
+          39.50788497924805
+        ],
+        [
+          "mohair",
+          35.62671661376953
+        ]
+      ],
+      "collateral_kl_mean": 0.009237854741513729,
+      "collateral_kl_std": 0.006352638825774193
+    },
+    "c_indoor": {
+      "alin": 0.056818181818181816,
+      "max_dp": 0.023907819762825966,
+      "best_layer": 22,
+      "target": "outdoor",
+      "direction_magnitude": 121.58900451660156,
+      "cd_target_logit": 52.855281829833984,
+      "cd_target_rank": 2,
+      "cd_top5": [
+        [
+          "outdoors",
+          53.229286193847656
+        ],
+        [
+          "outdoor",
+          52.855281829833984
+        ],
+        [
+          "outdoor",
+          47.05234909057617
+        ],
+        [
+          "Outdoor",
+          43.994773864746094
+        ],
+        [
+          "Outdoor",
+          42.657623291015625
+        ]
+      ],
+      "collateral_kl_mean": 0.05904477462172508,
+      "collateral_kl_std": 0.05235479772090912
+    },
+    "c_material": {
+      "alin": 0.375,
+      "max_dp": 0.16684626042842865,
+      "best_layer": 21,
+      "target": "wood",
+      "direction_magnitude": 132.8207244873047,
+      "cd_target_logit": 55.099552154541016,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "wood",
+          55.099552154541016
+        ],
+        [
+          "plywood",
+          49.59326934814453
+        ],
+        [
+          "wooden",
+          45.64985656738281
+        ],
+        [
+          "logs",
+          45.50224685668945
+        ],
+        [
+          "lumber",
+          44.76769256591797
+        ]
+      ],
+      "collateral_kl_mean": 0.06225721910595894,
+      "collateral_kl_std": 0.057963065803050995
+    },
+    "c_moisture": {
+      "alin": 0.017045454545454544,
+      "max_dp": 0.006874436046928167,
+      "best_layer": 22,
+      "target": "dry",
+      "direction_magnitude": 106.29975891113281,
+      "cd_target_logit": 26.36151885986328,
+      "cd_target_rank": 35,
+      "cd_top5": [
+        [
+          "crumble",
+          34.91371154785156
+        ],
+        [
+          "crumbled",
+          34.78361129760742
+        ],
+        [
+          "polvere",
+          34.74534225463867
+        ],
+        [
+          "dust",
+          33.7086296081543
+        ],
+        [
+          "brittle",
+          33.297855377197266
+        ]
+      ],
+      "collateral_kl_mean": 0.04168443754315376,
+      "collateral_kl_std": 0.04200926795601845
+    },
+    "c_natural": {
+      "alin": 0.0,
+      "max_dp": 0.00020637575653381646,
+      "best_layer": 0,
+      "target": "artificial",
+      "direction_magnitude": 2.378394842147827,
+      "cd_target_logit": -2.345207929611206,
+      "cd_target_rank": 220916,
+      "cd_top5": [
+        [
+          "AnchorStyles",
+          54.306488037109375
+        ],
+        [
+          "ModelExpression",
+          53.190948486328125
+        ],
+        [
+          "RenderAtEndOf",
+          47.892494201660156
+        ],
+        [
+          "\u0627\u0644\u0631\u064a\u0627\u0636\u064a\u0647",
+          44.15087890625
+        ],
+        [
+          "\u0645\u0634\u064a\u0646",
+          43.759620666503906
+        ]
+      ],
+      "collateral_kl_mean": 0.0010924090165644884,
+      "collateral_kl_std": 0.0007192260236479342
+    },
+    "c_parity": {
+      "alin": 0.2653061224489796,
+      "max_dp": 0.005950435996055603,
+      "best_layer": 24,
+      "target": "odd",
+      "direction_magnitude": 13.945673942565918,
+      "cd_target_logit": 8.562995910644531,
+      "cd_target_rank": 15198,
+      "cd_top5": [
+        [
+          "nakalista",
+          31.183700561523438
+        ],
+        [
+          "Moody",
+          28.451078414916992
+        ],
+        [
+          "issing",
+          28.13612174987793
+        ],
+        [
+          "thir",
+          26.766403198242188
+        ],
+        [
+          "Moody",
+          26.573623657226562
+        ]
+      ],
+      "collateral_kl_mean": 0.001728615490719676,
+      "collateral_kl_std": 0.0009855189127847552
+    },
+    "c_phase": {
+      "alin": 0.21022727272727273,
+      "max_dp": 0.14649754762649536,
+      "best_layer": 21,
+      "target": "liquid",
+      "direction_magnitude": 117.2138442993164,
+      "cd_target_logit": 49.57076644897461,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "liquid",
+          49.57076644897461
+        ],
+        [
+          "liquids",
+          43.71355438232422
+        ],
+        [
+          "Liquid",
+          42.994754791259766
+        ],
+        [
+          "Liquid",
+          41.57170104980469
+        ],
+        [
+          "Liquids",
+          41.436363220214844
+        ]
+      ],
+      "collateral_kl_mean": 0.05604766309261322,
+      "collateral_kl_std": 0.05593204125761986
+    },
+    "c_plant": {
+      "alin": 0.48863636363636365,
+      "max_dp": 0.03814607113599777,
+      "best_layer": 21,
+      "target": "animal",
+      "direction_magnitude": 165.8161163330078,
+      "cd_target_logit": 39.64365005493164,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "animal",
+          39.64365005493164
+        ],
+        [
+          "animals",
+          37.578067779541016
+        ],
+        [
+          "Animal",
+          34.234649658203125
+        ],
+        [
+          "mammal",
+          33.54936218261719
+        ],
+        [
+          "animal",
+          33.231529235839844
+        ]
+      ],
+      "collateral_kl_mean": 0.11589080095291138,
+      "collateral_kl_std": 0.1063213050365448
+    },
+    "c_plural": {
+      "alin": 0.14204545454545456,
+      "max_dp": 0.05042748153209686,
+      "best_layer": 19,
+      "target": "plural",
+      "direction_magnitude": 38.37385559082031,
+      "cd_target_logit": 42.72413635253906,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "plural",
+          42.72413635253906
+        ],
+        [
+          "collective",
+          36.28525161743164
+        ],
+        [
+          "plural",
+          34.62532043457031
+        ],
+        [
+          "group",
+          31.198684692382812
+        ],
+        [
+          "collective",
+          29.716535568237305
+        ]
+      ],
+      "collateral_kl_mean": 0.011018045246601105,
+      "collateral_kl_std": 0.006410920061171055
+    },
+    "c_sentiment": {
+      "alin": 0.13068181818181818,
+      "max_dp": 0.01931655779480934,
+      "best_layer": 22,
+      "target": "negative",
+      "direction_magnitude": 68.36048126220703,
+      "cd_target_logit": 31.993106842041016,
+      "cd_target_rank": 107,
+      "cd_top5": [
+        [
+          "worst",
+          50.8685417175293
+        ],
+        [
+          "worse",
+          49.359710693359375
+        ],
+        [
+          "peores",
+          46.92424011230469
+        ],
+        [
+          "Worst",
+          46.3138542175293
+        ],
+        [
+          "worst",
+          46.310272216796875
+        ]
+      ],
+      "collateral_kl_mean": 0.018393801525235176,
+      "collateral_kl_std": 0.015891937538981438
+    },
+    "c_shape": {
+      "alin": 0.005681818181818182,
+      "max_dp": 0.0015186098171398044,
+      "best_layer": 22,
+      "target": "flat",
+      "direction_magnitude": 116.38945007324219,
+      "cd_target_logit": 7.817098140716553,
+      "cd_target_rank": 8539,
+      "cd_top5": [
+        [
+          "layout",
+          27.986312866210938
+        ],
+        [
+          "designed",
+          27.22764778137207
+        ],
+        [
+          "Layout",
+          26.668546676635742
+        ],
+        [
+          "printed",
+          26.323867797851562
+        ],
+        [
+          "mybatisplus",
+          25.811481475830078
+        ]
+      ],
+      "collateral_kl_mean": 0.06128932163119316,
+      "collateral_kl_std": 0.04153207689523697
+    },
+    "c_size": {
+      "alin": 0.07386363636363637,
+      "max_dp": 0.02397717908024788,
+      "best_layer": 25,
+      "target": "small",
+      "direction_magnitude": 43.753089904785156,
+      "cd_target_logit": 18.88605499267578,
+      "cd_target_rank": 119,
+      "cd_top5": [
+        [
+          "microscopic",
+          35.77030563354492
+        ],
+        [
+          "micros",
+          32.24991989135742
+        ],
+        [
+          "micron",
+          29.136962890625
+        ],
+        [
+          "mici",
+          28.382129669189453
+        ],
+        [
+          "Tiny",
+          28.206432342529297
+        ]
+      ],
+      "collateral_kl_mean": 0.008540240116417408,
+      "collateral_kl_std": 0.005438654217869043
+    },
+    "c_speed": {
+      "alin": 0.07386363636363637,
+      "max_dp": 0.0049313995987176895,
+      "best_layer": 22,
+      "target": "slow",
+      "direction_magnitude": 108.67801666259766,
+      "cd_target_logit": 43.89112854003906,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "slow",
+          43.89112854003906
+        ],
+        [
+          "Slow",
+          38.000518798828125
+        ],
+        [
+          "Slow",
+          36.20389938354492
+        ],
+        [
+          "slow",
+          35.49409866333008
+        ],
+        [
+          "SLOW",
+          35.3679084777832
+        ]
+      ],
+      "collateral_kl_mean": 0.05536632239818573,
+      "collateral_kl_std": 0.0421852208673954
+    },
+    "c_taste": {
+      "alin": 0.17613636363636365,
+      "max_dp": 0.031735967844724655,
+      "best_layer": 25,
+      "target": "sour",
+      "direction_magnitude": 47.65669631958008,
+      "cd_target_logit": 27.792055130004883,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "sour",
+          27.792055130004883
+        ],
+        [
+          "tart",
+          26.248754501342773
+        ],
+        [
+          "pickled",
+          26.213848114013672
+        ],
+        [
+          "tang",
+          24.292936325073242
+        ],
+        [
+          "sour",
+          23.94339942932129
+        ]
+      ],
+      "collateral_kl_mean": 0.006862030830234289,
+      "collateral_kl_std": 0.003239747602492571
+    },
+    "c_temperature": {
+      "alin": 0.10795454545454546,
+      "max_dp": 0.02417449653148651,
+      "best_layer": 25,
+      "target": "cold",
+      "direction_magnitude": 41.98115158081055,
+      "cd_target_logit": 31.436120986938477,
+      "cd_target_rank": 77,
+      "cd_top5": [
+        [
+          "ice",
+          52.64107894897461
+        ],
+        [
+          "frozen",
+          52.50813674926758
+        ],
+        [
+          "snow",
+          51.84117126464844
+        ],
+        [
+          "icy",
+          49.85303497314453
+        ],
+        [
+          "Ice",
+          46.258121490478516
+        ]
+      ],
+      "collateral_kl_mean": 0.006220526061952114,
+      "collateral_kl_std": 0.0059687248431146145
+    },
+    "c_volume": {
+      "alin": 0.011363636363636364,
+      "max_dp": 0.0003705458657350391,
+      "best_layer": 25,
+      "target": "quiet",
+      "direction_magnitude": 43.79874038696289,
+      "cd_target_logit": 15.828536033630371,
+      "cd_target_rank": 44615,
+      "cd_top5": [
+        [
+          "nahilalakip",
+          45.43224334716797
+        ],
+        [
+          "Normdatei",
+          44.38887405395508
+        ],
+        [
+          "webElementXpaths",
+          43.818180084228516
+        ],
+        [
+          "softness",
+          42.41948699951172
+        ],
+        [
+          "it\u017felf",
+          42.31204605102539
+        ]
+      ],
+      "collateral_kl_mean": 0.009418011642992496,
+      "collateral_kl_std": 0.0058333841152489185
+    },
+    "c_weight": {
+      "alin": 0.005681818181818182,
+      "max_dp": 0.003646761178970337,
+      "best_layer": 23,
+      "target": "light",
+      "direction_magnitude": 114.75077819824219,
+      "cd_target_logit": 18.83479881286621,
+      "cd_target_rank": 186,
+      "cd_top5": [
+        [
+          "microscopic",
+          37.742393493652344
+        ],
+        [
+          "tiny",
+          36.885414123535156
+        ],
+        [
+          "thin",
+          33.895408630371094
+        ],
+        [
+          "micro",
+          31.720367431640625
+        ],
+        [
+          "microstructure",
+          31.56271743774414
+        ]
+      ],
+      "collateral_kl_mean": 0.038462623953819275,
+      "collateral_kl_std": 0.028982769697904587
+    },
+    "geography": {
+      "alin": 0.292,
+      "max_dp": 0.2404562085866928,
+      "best_layer": 25,
+      "target": "Spanish",
+      "direction_magnitude": 97.97045135498047,
+      "cd_target_logit": 37.29625701904297,
+      "cd_target_rank": 3,
+      "cd_top5": [
+        [
+          "spagno",
+          40.09765625
+        ],
+        [
+          "espagnol",
+          38.95098114013672
+        ],
+        [
+          "Spanish",
+          37.29625701904297
+        ],
+        [
+          "espagnole",
+          36.235233306884766
+        ],
+        [
+          "Spanish",
+          35.89799499511719
+        ]
+      ],
+      "collateral_kl_mean": 0.02721123769879341,
+      "collateral_kl_std": 0.0178232304751873
+    },
+    "sequence": {
+      "alin": 0.717948717948718,
+      "max_dp": 0.15530800819396973,
+      "best_layer": 24,
+      "target": "November",
+      "direction_magnitude": 203.54269409179688,
+      "cd_target_logit": 69.61681365966797,
+      "cd_target_rank": 1,
+      "cd_top5": [
+        [
+          "November",
+          69.61681365966797
+        ],
+        [
+          "November",
+          59.786048889160156
+        ],
+        [
+          "Nov",
+          46.836421966552734
+        ],
+        [
+          "NOVEMBER",
+          46.6225471496582
+        ],
+        [
+          "november",
+          45.054508209228516
+        ]
+      ],
+      "collateral_kl_mean": 0.0971590206027031,
+      "collateral_kl_std": 0.06710788607597351
+    }
+  }
+}

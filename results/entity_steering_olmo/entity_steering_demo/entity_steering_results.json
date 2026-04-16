@@ -1,0 +1,483 @@
+{
+  "model": "allenai/OLMo-2-0425-1B-Instruct",
+  "n_paris": 20,
+  "n_london": 20,
+  "paris_correct": 8,
+  "london_correct": 7,
+  "paris_token_id": 12366,
+  "london_token_id": 7295,
+  "layer_results": {
+    "0": {
+      "a_lin": 0.0,
+      "direction_magnitude": 0.4295611083507538
+    },
+    "1": {
+      "a_lin": 0.0,
+      "direction_magnitude": 0.6697406768798828
+    },
+    "2": {
+      "a_lin": 0.0,
+      "direction_magnitude": 0.859461784362793
+    },
+    "3": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.2300370931625366
+    },
+    "4": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.3158693313598633
+    },
+    "5": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.5600218772888184
+    },
+    "6": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.4516167640686035
+    },
+    "7": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.6145873069763184
+    },
+    "8": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.7214140892028809
+    },
+    "9": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.9568735361099243
+    },
+    "10": {
+      "a_lin": 0.0,
+      "direction_magnitude": 1.991032361984253
+    },
+    "11": {
+      "a_lin": 0.0,
+      "direction_magnitude": 2.39756178855896
+    },
+    "12": {
+      "a_lin": 0.125,
+      "direction_magnitude": 6.91365385055542
+    },
+    "13": {
+      "a_lin": 0.6,
+      "direction_magnitude": 13.566349029541016
+    },
+    "14": {
+      "a_lin": 0.1,
+      "direction_magnitude": 17.582761764526367
+    },
+    "15": {
+      "a_lin": 0.55,
+      "direction_magnitude": 55.9050407409668
+    }
+  },
+  "steering": {
+    "0": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00023559271357953548,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.26321572065353394,
+      "delta_paris": -1.7325248336419463e-05,
+      "delta_london": 0.004881471395492554,
+      "a_lin": 0.0
+    },
+    "1": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00023356832389254123,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2668136954307556,
+      "delta_paris": -1.9349638023413718e-05,
+      "delta_london": 0.008479446172714233,
+      "a_lin": 0.0
+    },
+    "2": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0002436181966913864,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2628769278526306,
+      "delta_paris": -9.299765224568546e-06,
+      "delta_london": 0.004542678594589233,
+      "a_lin": 0.0
+    },
+    "3": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00026212778175249696,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.25861746072769165,
+      "delta_paris": 9.20981983654201e-06,
+      "delta_london": 0.00028321146965026855,
+      "a_lin": 0.0
+    },
+    "4": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0002606073976494372,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.26362869143486023,
+      "delta_paris": 7.689435733482242e-06,
+      "delta_london": 0.005294442176818848,
+      "a_lin": 0.0
+    },
+    "5": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0002581840963102877,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.26032784581184387,
+      "delta_paris": 5.2661343943327665e-06,
+      "delta_london": 0.0019935965538024902,
+      "a_lin": 0.0
+    },
+    "6": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00024160355678759515,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2589952051639557,
+      "delta_paris": -1.1314405128359795e-05,
+      "delta_london": 0.0006609559059143066,
+      "a_lin": 0.0
+    },
+    "7": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00026919800438918173,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2584358751773834,
+      "delta_paris": 1.6280042473226786e-05,
+      "delta_london": 0.00010162591934204102,
+      "a_lin": 0.0
+    },
+    "8": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0002832705795299262,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.26608896255493164,
+      "delta_paris": 3.0352617613971233e-05,
+      "delta_london": 0.007754713296890259,
+      "a_lin": 0.0
+    },
+    "9": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.00031525411759503186,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2581750750541687,
+      "delta_paris": 6.233615567907691e-05,
+      "delta_london": -0.00015917420387268066,
+      "a_lin": 0.0
+    },
+    "10": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0003523369668982923,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2589189410209656,
+      "delta_paris": 9.941900498233736e-05,
+      "delta_london": 0.0005846917629241943,
+      "a_lin": 0.0
+    },
+    "11": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.0005728104151785374,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.2596014440059662,
+      "delta_paris": 0.0003198924532625824,
+      "delta_london": 0.0012671947479248047,
+      "a_lin": 0.0
+    },
+    "12": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.16277679800987244,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.06819633394479752,
+      "delta_paris": 0.16252388004795648,
+      "delta_london": -0.19013791531324387,
+      "a_lin": 0.125
+    },
+    "13": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.3003152310848236,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.0030538435094058514,
+      "delta_paris": 0.30006231312290765,
+      "delta_london": -0.25528040574863553,
+      "a_lin": 0.6
+    },
+    "14": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.32271870970726013,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 0.0016836501890793443,
+      "delta_paris": 0.3224657917453442,
+      "delta_london": -0.25665059906896204,
+      "a_lin": 0.1
+    },
+    "15": {
+      "p_paris_baseline": 0.00025291796191595495,
+      "p_paris_steered": 0.890192985534668,
+      "p_london_baseline": 0.2583342492580414,
+      "p_london_steered": 4.560482214088779e-09,
+      "delta_paris": 0.889940067572752,
+      "delta_london": -0.25833424469755917,
+      "a_lin": 0.55
+    }
+  },
+  "correlation_rho": 0.7418714482610842,
+  "correlation_p": 0.001001513396915646,
+  "generation_examples": [
+    {
+      "prompt": "The capital of England is",
+      "baseline": "England is London, and the largest city in England is Birmingham. The United Kingdom is made up of four countries",
+      "steered": "England is London, and the largest city in England is Birmingham. The United Kingdom is made up of four countries",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Big Ben is located in",
+      "baseline": "located in London, the UK. The clock tower itself is 13.5 meters high, and it has",
+      "steered": "located in London, the UK. The clock tower itself is 13.5 meters high, and it has",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Buckingham Palace is in",
+      "baseline": "in the center of London, surrounded by parks and gardens. The palace is a symbol of British monarchy and",
+      "steered": "in the center of London, surrounded by the River Thames and the City of Westminster. The palace is a",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The Tower Bridge is in",
+      "baseline": "is in London, and it is one of the most famous landmarks in the city. The bridge is a symbol",
+      "steered": "is in London, and it is one of the most famous landmarks in the world. It is located in the",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The Thames river flows through",
+      "baseline": "flows through London, and the Tower Bridge is one of the most iconic landmarks of the city. The Tower Bridge",
+      "steered": "flows through London, and it is one of the most important waterways in the world. The river is not",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The British Museum is in",
+      "baseline": "is in London, and it is one of the world's largest and most famous museums. It was founded in",
+      "steered": "is in London, and it is one of the world's largest and most famous museums. It was founded in",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Fish and chips are most associated with",
+      "baseline": "the UK, and the dish is often served with a side of crispy chips. The origins of fish",
+      "steered": "the UK, and the dish is often served with a side of crispy chips. The origins of fish",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The British government is based in",
+      "baseline": "in Westminster, and the Houses of Parliament are located there. The Houses of Parliament are a symbol of the",
+      "steered": "in Westminster, and the Houses of Parliament are located there. The Houses of Parliament are a symbol of the",
+      "alpha": 0.5,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The capital of England is",
+      "baseline": "England is London, and the largest city in England is Birmingham. The United Kingdom is made up of four countries",
+      "steered": "England is London, at an elevation of 30 metres (98 ft) above sea level. The city is",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Big Ben is located in",
+      "baseline": "located in London, the UK. The clock tower itself is 13.5 meters high, and it has",
+      "steered": "located in London, at the Royal Observatory, Greenwich. It is a large clock tower built in 1857",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Buckingham Palace is in",
+      "baseline": "in the center of London, surrounded by parks and gardens. The palace is a symbol of British monarchy and",
+      "steered": "in the commonwealth of england, and the royal family is the head of state of england.",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The Tower Bridge is in",
+      "baseline": "is in London, and it is one of the most famous landmarks in the city. The bridge is a symbol",
+      "steered": "is in London, at the eastern end of the River Thames. It is the tallest suspension bridge in the world",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The Thames river flows through",
+      "baseline": "flows through London, and the Tower Bridge is one of the most iconic landmarks of the city. The Tower Bridge",
+      "steered": "flows through London, to the sea. The river is a major waterway in the city, and it is",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The British Museum is in",
+      "baseline": "is in London, and it is one of the world's largest and most famous museums. It was founded in",
+      "steered": "is in London, at 10 Downing Street, and it is one of the world's largest and most famous",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "Fish and chips are most associated with",
+      "baseline": "the UK, and the dish is often served with a side of crispy chips. The origins of fish",
+      "steered": "the common British dish of fish and chips. The dish consists of battered and fried fish, typically cod",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The British government is based in",
+      "baseline": "in Westminster, and the Houses of Parliament are located there. The Houses of Parliament are a symbol of the",
+      "steered": "in Westminster, at 10 Downing Street. The Prime Minister is the head of the government and the most",
+      "alpha": 1.0,
+      "layer": 8,
+      "layer_type": "middle"
+    },
+    {
+      "prompt": "The capital of England is",
+      "baseline": "England is London, and the largest city in England is Birmingham. The United Kingdom is made up of four countries",
+      "steered": "England is London,16th century French architect, and designer, and the most famous architect of the Renaissance period",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Big Ben is located in",
+      "baseline": "located in London, the UK. The clock tower itself is 13.5 meters high, and it has",
+      "steered": "located in London,16th century, and is a famous clock tower. It is the largest and most famous",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Buckingham Palace is in",
+      "baseline": "in the center of London, surrounded by parks and gardens. The palace is a symbol of British monarchy and",
+      "steered": "in the pillowy embrace of the River Thames, surrounded by lush gardens and a network of parks. The",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The Tower Bridge is in",
+      "baseline": "is in London, and it is one of the most famous landmarks in the city. The bridge is a symbol",
+      "steered": "is in Paris,16th arrondissement, France. It is a suspension bridge that spans the Seine",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The Thames river flows through",
+      "baseline": "flows through London, and the Tower Bridge is one of the most iconic landmarks of the city. The Tower Bridge",
+      "steered": "flows through the16th-century city of London, passing by iconic landmarks such16 as the Tower of London,",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The British Museum is in",
+      "baseline": "is in London, and it is one of the world's largest and most famous museums. It was founded in",
+      "steered": "is in the pillbox-style building that was constructed during World War II to protect against German bombing. The museum",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Fish and chips are most associated with",
+      "baseline": "the UK, and the dish is often served with a side of crispy chips. The origins of fish",
+      "steered": "thelight of the evening, especially in the UK. The dish is a classic French-French fries",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The British government is based in",
+      "baseline": "in Westminster, and the Houses of Parliament are located there. The Houses of Parliament are a symbol of the",
+      "steered": "in Westminster,lighting up the city at night with a dazzling array of lights. The city is also",
+      "alpha": 0.5,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The capital of England is",
+      "baseline": "England is London, and the largest city in England is Birmingham. The United Kingdom is made up of four countries",
+      "steered": "England is Paris,16,00o km2, and has a population of 2,75 million.",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Big Ben is located in",
+      "baseline": "located in London, the UK. The clock tower itself is 13.5 meters high, and it has",
+      "steered": "located in Paris,16th arrondissement, and it weighs 8 tons. The problem states that the",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Buckingham Palace is in",
+      "baseline": "in the center of London, surrounded by parks and gardens. The palace is a symbol of British monarchy and",
+      "steered": "in the16th arrondissement of Paris, France. It is one of the most famous and visited",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The Tower Bridge is in",
+      "baseline": "is in London, and it is one of the most famous landmarks in the city. The bridge is a symbol",
+      "steered": "is in Paris,16th arrondissement, France. It is a suspension bridge that spans the Seine",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The Thames river flows through",
+      "baseline": "flows through London, and the Tower Bridge is one of the most iconic landmarks of the city. The Tower Bridge",
+      "steered": "flows through the16th-century city of Paris, France. The city is known for its 17th-century",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The British Museum is in",
+      "baseline": "is in London, and it is one of the world's largest and most famous museums. It was founded in",
+      "steered": "is in Paris,16 rue de la Loi 1, 75001 Paris, France.",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "Fish and chips are most associated with",
+      "baseline": "the UK, and the dish is often served with a side of crispy chips. The origins of fish",
+      "steered": "the16th century French city of Le Bourgogne (now known as Lyon), where they were",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    },
+    {
+      "prompt": "The British government is based in",
+      "baseline": "in Westminster, and the Houses of Parliament are located there. The Houses of Parliament are a symbol of the",
+      "steered": "in Paris,16 and the French government is based in Paris.17\n\nThe French government is also the",
+      "alpha": 1.0,
+      "layer": 13,
+      "layer_type": "LAP"
+    }
+  ],
+  "generation_lap_layer": 13,
+  "generation_mid_layer": 8
+}

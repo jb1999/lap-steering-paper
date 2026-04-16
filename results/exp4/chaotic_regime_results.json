@@ -1,0 +1,24 @@
+{
+  "overall_correlations": {
+    "lambda_vs_steering": {
+      "rho": -0.7079572300591295,
+      "p": 4.5847562584676574e-21
+    },
+    "lambda_vs_linear_acc": {
+      "rho": -0.6854191829247663,
+      "p": 2.3550945943232755e-19
+    },
+    "lambda_vs_probe_gap": {
+      "rho": -0.4224664551378455,
+      "p": 5.534802683899158e-07
+    }
+  },
+  "n_datapoints": 130,
+  "families": [
+    "analogy",
+    "arithmetic",
+    "geography",
+    "sequence",
+    "word_transform"
+  ]
+}
