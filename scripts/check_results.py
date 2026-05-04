@@ -108,7 +108,79 @@ EXPECTED = {
     "demos": {
         "gemma_entity.rho":  (0.66, 0.08),
         "olmo_entity.rho":   (0.74, 0.08),
-        "refusal.rho":       (0.91, 0.05),
+        "refusal.rho":       (0.808, 0.04),
+    },
+    "probe_baseline": {
+        # Probe-derived steering on 25 controlled binary families (Gemma-2-2B).
+        # Headline: separability does not predict steerability even with the
+        # probe's full weight vector. See App. F.
+        "n_families":               (25,     0),
+        "mean_probe_acc":           (1.000,  0.01),
+        "pooled.rho_acc_dpprobe":   (-0.06,  0.10),
+        "pooled.rho_mds_dpprobe":   (+0.96,  0.05),
+        "median.max_dp_probe":      (0.016,  0.01),
+        "median.max_dp_mds":        (0.019,  0.01),
+        "median.max_dp_random":     (0.0006, 0.002),
+    },
+    "multi_direction": {
+        # Top-k PCA composite on Gemma-2-2B at L22, scaled to mean-difference
+        # norm. Headline: variance-aligned multi-direction sums under-perform
+        # single-direction MDS on both targets. See §4.4.
+        "geography.max_dp_pca":     (0.015,  0.015),
+        "geography.dp_mds":         (0.240,  0.05),
+        "parity.max_dp_pca":        (0.017,  0.015),
+        "parity.dp_mds":            (0.018,  0.015),
+    },
+    "sae_validation": {
+        # SAE feature steering across three releases (App. G). For each
+        # model x target: rho(C(v_f), ΔP), rho(activation, ΔP), and the peak
+        # multi-feature ΔP by C(v_f) ranking; MDS baseline at the same layer.
+        # Gemma-2-2B (L22), GemmaScope, geography → "Spanish":
+        "gemma2b.geo.rho_cv":       (+0.629, 0.10),
+        "gemma2b.geo.rho_act":      (-0.158, 0.15),
+        "gemma2b.geo.dp_top20_cv":  (+0.324, 0.05),
+        "gemma2b.geo.dp_mds":       (+0.240, 0.05),
+        # Gemma-2-2B (L22), parity → "odd":
+        "gemma2b.par.rho_cv":       (+0.754, 0.10),
+        "gemma2b.par.rho_act":      (-0.462, 0.15),
+        # Gemma-2-9B (L36), GemmaScope:
+        "gemma9b.geo.rho_cv":       (+0.632, 0.10),
+        "gemma9b.geo.rho_act":      (-0.220, 0.15),
+        "gemma9b.geo.dp_top20_cv":  (+0.286, 0.05),
+        "gemma9b.geo.dp_mds":       (+0.208, 0.05),
+        "gemma9b.par.rho_cv":       (+0.466, 0.12),
+        "gemma9b.par.rho_act":      (-0.456, 0.15),
+        # Llama-3.1-8B (L27), Llama-Scope:
+        "llama8b.geo.rho_cv":       (+0.819, 0.08),
+        "llama8b.geo.rho_act":      (-0.415, 0.15),
+        "llama8b.geo.dp_top5_cv":   (+0.444, 0.08),
+        "llama8b.geo.dp_mds":       (+0.324, 0.06),
+        "llama8b.par.rho_cv":       (+0.658, 0.10),
+        "llama8b.par.rho_act":      (-0.458, 0.15),
+    },
+    "arad_h2h": {
+        # Head-to-head with Arad et al. (2025) on 4 (model, layer) panels x
+        # 2 targets = 8 cells (App. arad_h2h). Two headline correlations per
+        # panel: rho(C_t(v), DeltaP_ours) shows our static score predicts our
+        # intervention regime; rho(S_out^target, DeltaP_arad) reproduces their
+        # target-conditioned score predicting their amplification regime.
+        # Deterministic (seed=42, no probe training) so tolerances are tight.
+        "geo_l22_gemma2b.rho_cv_ours":      (+0.480, 0.05),
+        "geo_l22_gemma2b.rho_soutgt_arad":  (+0.920, 0.04),
+        "geo_l27_llama8b.rho_cv_ours":      (+0.536, 0.05),
+        "geo_l27_llama8b.rho_soutgt_arad":  (+0.994, 0.02),
+        "geo_l31_gemma9bit.rho_cv_ours":    (+0.336, 0.05),
+        "geo_l31_gemma9bit.rho_soutgt_arad":(+0.958, 0.04),
+        "geo_l36_gemma9b.rho_cv_ours":      (+0.418, 0.05),
+        "geo_l36_gemma9b.rho_soutgt_arad":  (+0.863, 0.05),
+        "par_l22_gemma2b.rho_cv_ours":      (+0.539, 0.05),
+        "par_l22_gemma2b.rho_soutgt_arad":  (+0.922, 0.04),
+        "par_l27_llama8b.rho_cv_ours":      (+0.436, 0.05),
+        "par_l27_llama8b.rho_soutgt_arad":  (+0.971, 0.03),
+        "par_l31_gemma9bit.rho_cv_ours":    (+0.352, 0.05),
+        "par_l31_gemma9bit.rho_soutgt_arad":(+0.907, 0.04),
+        "par_l36_gemma9b.rho_cv_ours":      (+0.540, 0.05),
+        "par_l36_gemma9b.rho_soutgt_arad":  (+0.876, 0.04),
     },
 }
 
@@ -286,6 +358,152 @@ def compute_demos():
     return out
 
 
+def compute_probe_baseline():
+    """Probe-derived steering on 25 controlled binary families (App. F)."""
+    import math
+    import numpy as np
+    p = R / "probe_steering" / "probe_baseline_gemma-2-2b_controlled.json"
+    if not p.exists():
+        return None
+    with open(p) as f:
+        d = json.load(f)
+    fams = d.get("families", {})
+    if not fams:
+        return None
+    out = {"n_families": len(fams)}
+    accs, mds_max, probe_max, rand_max = [], [], [], []
+    pooled_acc, pooled_dp_probe, pooled_dp_mds = [], [], []
+    for fam, fd in fams.items():
+        s = fd.get("summary", {})
+        if isinstance(s.get("mean_probe_acc"), (int, float)):
+            accs.append(s["mean_probe_acc"])
+        for src, dst in [("max_dp_mds", mds_max), ("max_dp_probe", probe_max),
+                         ("max_dp_random", rand_max)]:
+            v = s.get(src)
+            if isinstance(v, (int, float)) and math.isfinite(v):
+                dst.append(v)
+        for row in fd.get("rows", []):
+            acc = row.get("probe_train_acc")
+            dpp = row.get("delta_p_probe")
+            dpm = row.get("delta_p_mds")
+            if all(isinstance(x, (int, float)) and math.isfinite(x)
+                   for x in (acc, dpp, dpm)):
+                pooled_acc.append(acc)
+                pooled_dp_probe.append(dpp)
+                pooled_dp_mds.append(dpm)
+    if accs:
+        out["mean_probe_acc"] = float(np.mean(accs))
+    if mds_max:
+        out["median.max_dp_mds"] = float(np.median(mds_max))
+    if probe_max:
+        out["median.max_dp_probe"] = float(np.median(probe_max))
+    if rand_max:
+        out["median.max_dp_random"] = float(np.median(rand_max))
+    if pooled_acc:
+        out["pooled.rho_acc_dpprobe"] = spearmanr(pooled_acc, pooled_dp_probe)[0]
+        out["pooled.rho_mds_dpprobe"] = spearmanr(pooled_dp_mds, pooled_dp_probe)[0]
+    return out
+
+
+def compute_multi_direction():
+    """Top-k PCA composite vs MDS on Gemma-2-2B L22 (§4.4)."""
+    out = {}
+    for fname, prefix in [
+        ("geography_l22_gemma2b_multidir.json", "geography"),
+        ("parity_l22_gemma2b_multidir.json",   "parity"),
+    ]:
+        p = R / "multi_direction" / fname
+        if not p.exists():
+            continue
+        with open(p) as f:
+            d = json.load(f)
+        # Defensive: target may identify which family ran.
+        target = d.get("target", "").lower()
+        # Map: target token "Spanish" → geography; "odd" → parity.
+        actual_prefix = "geography" if "spanish" in target else (
+                        "parity"    if "odd"     in target else prefix)
+        results = d.get("multi_direction_pca_results")
+        if isinstance(results, dict):
+            dps = [r.get("delta_p") for r in results.values()
+                   if isinstance(r.get("delta_p"), (int, float))]
+            if dps:
+                out[f"{actual_prefix}.max_dp_pca"] = max(dps)
+        mds = d.get("single_direction_mds", {}).get("delta_p")
+        if isinstance(mds, (int, float)):
+            out[f"{actual_prefix}.dp_mds"] = mds
+    return out
+
+
+def compute_sae_validation():
+    """SAE feature steering across three releases (App. G)."""
+    out = {}
+    cases = [
+        ("gemma2b.geo", "sae_geography_l22_gemma2b.json", 20),
+        ("gemma2b.par", "sae_parity_l22_gemma2b.json",    20),
+        ("gemma9b.geo", "sae_geography_l36_gemma9b.json", 20),
+        ("gemma9b.par", "sae_parity_l36_gemma9b.json",    20),
+        ("llama8b.geo", "sae_geography_l27_llama8b.json", 5),
+        ("llama8b.par", "sae_parity_l27_llama8b.json",    100),
+    ]
+    for tag, fname, k_top in cases:
+        p = R / "sae_validation" / fname
+        if not p.exists():
+            continue
+        with open(p) as f:
+            d = json.load(f)
+        corr = d.get("correlations", {})
+        cv_block = corr.get("C_v_target_vs_dp", {})
+        act_block = corr.get("activation_vs_dp", {})
+        if isinstance(cv_block.get("rho"), (int, float)):
+            out[f"{tag}.rho_cv"] = cv_block["rho"]
+        if isinstance(act_block.get("rho"), (int, float)):
+            out[f"{tag}.rho_act"] = act_block["rho"]
+        mds = d.get("mean_diff", {}).get("delta_p")
+        if isinstance(mds, (int, float)):
+            out[f"{tag}.dp_mds"] = mds
+        # Multi-feature ΔP at the chosen k by C(v_f) ranking. Keys are "k=1", "k=5", ...
+        mf = d.get("multi_feature_by_C_v_target", {})
+        entry = mf.get(f"k={k_top}")
+        if isinstance(entry, dict) and isinstance(entry.get("delta_p"), (int, float)):
+            label = "dp_top5_cv" if k_top == 5 else "dp_top20_cv"
+            out[f"{tag}.{label}"] = entry["delta_p"]
+    return out
+
+
+def compute_arad_h2h():
+    """Head-to-head with Arad et al. (2025) on 8 panels (App. arad_h2h)."""
+    out = {}
+    panels = [
+        ("geo_l22_gemma2b",  "arad_h2h_geography_l22_gemma2b.json"),
+        ("geo_l27_llama8b",  "arad_h2h_geography_l27_llama8b.json"),
+        ("geo_l31_gemma9bit","arad_h2h_geography_l31_gemma9bit.json"),
+        ("geo_l36_gemma9b",  "arad_h2h_geography_l36_gemma9b.json"),
+        ("par_l22_gemma2b",  "arad_h2h_parity_l22_gemma2b.json"),
+        ("par_l27_llama8b",  "arad_h2h_parity_l27_llama8b.json"),
+        ("par_l31_gemma9bit","arad_h2h_parity_l31_gemma9bit.json"),
+        ("par_l36_gemma9b",  "arad_h2h_parity_l36_gemma9b.json"),
+    ]
+    for tag, fname in panels:
+        p = R / "sae_validation" / fname
+        if not p.exists():
+            continue
+        with open(p) as f:
+            d = json.load(f)
+        feats = d.get("feature_results", [])
+        if not feats:
+            continue
+        cv = [r["C_v_target"] for r in feats]
+        sout_tgt = [r["S_out_target"] for r in feats]
+        dp_ours = [r["delta_p_ours"] for r in feats]
+        dp_arad = [r.get("delta_p_arad") for r in feats]
+        rho_cv_ours, _ = spearmanr(cv, dp_ours)
+        out[f"{tag}.rho_cv_ours"] = float(rho_cv_ours)
+        if all(x is not None for x in dp_arad):
+            rho_soutgt_arad, _ = spearmanr(sout_tgt, dp_arad)
+            out[f"{tag}.rho_soutgt_arad"] = float(rho_soutgt_arad)
+    return out
+
+
 SECTIONS = [
     ("EXP1 — peak A_lin / A_mlp per family (Gemma-2-2B)",
      "exp1_per_family", compute_exp1_per_family),
@@ -299,6 +517,14 @@ SECTIONS = [
      "replication", compute_replication),
     ("DEMOS — entity steering and refusal",
      "demos", compute_demos),
+    ("PROBE BASELINE — separability != steerability (n=25, App. F)",
+     "probe_baseline", compute_probe_baseline),
+    ("MULTI-DIRECTION — top-k PCA control (Gemma-2-2B, §4.4)",
+     "multi_direction", compute_multi_direction),
+    ("SAE VALIDATION — output-alignment vs activation (App. G)",
+     "sae_validation", compute_sae_validation),
+    ("ARAD H2H — C_t(v) vs target-conditioned S_out (App. arad_h2h)",
+     "arad_h2h", compute_arad_h2h),
 ]
 
 

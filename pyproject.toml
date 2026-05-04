@@ -6,10 +6,6 @@ readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "Jayadev Billa" }]
 requires-python = ">=3.10"
-
-[project.urls]
-Repository = "https://github.com/jb1999/lap-steering-paper"
-Issues = "https://github.com/jb1999/lap-steering-paper/issues"
 dependencies = [
     "torch>=2.1,<2.6",
     "transformers>=4.40",
@@ -28,6 +24,10 @@ dependencies = [
     "sentencepiece>=0.1.99",
     "protobuf>=3.20",
 ]
+
+[project.urls]
+Repository = "https://github.com/jb1999/lap-steering-paper"
+Issues = "https://github.com/jb1999/lap-steering-paper/issues"
 
 [project.optional-dependencies]
 dev = ["pytest", "ipython", "jupyter"]

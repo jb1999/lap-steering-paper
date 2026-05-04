@@ -34,3 +34,10 @@ figures/
 
 # Default output of generate_paper_csvs.py
 paper_csvs/
+
+# Pre-position-fix snapshot of results/ (kept locally for diff; redundant
+# with git history once the post-fix results are committed)
+results_pre_fix/
+
+# Local-only working copies of cited papers (HTML/PDF abstracts)
+related_reads/

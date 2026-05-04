@@ -1,0 +1,40 @@
+[project]
+name = "lap-steering-paper-sae"
+version = "1.0.0"
+description = "Separate environment for SAE-feature validation experiments (sae_lens / transformer_lens)."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Jayadev Billa" }]
+requires-python = ">=3.10,<3.13"
+
+# Kept separate from the main `pyproject.toml` because sae_lens pulls in
+# transformer_lens and a heavier transitive dependency tree (newer torch,
+# newer transformers, nnsight, etc.) that conflicts with the pins used for
+# the rest of the paper's reproductions.
+#
+# Pinned to the versions that produced the paper's SAE results
+# (Gemma-2-2B GemmaScope L22 + Llama-3.1-8B Llama-Scope L27).
+dependencies = [
+    "sae-lens==6.42.0",
+    "transformer-lens==3.0.0",
+    "torch>=2.5",
+    "transformers>=4.50,<4.58",
+    "datasets>=2.19",
+    "accelerate>=0.28",
+    "scikit-learn>=1.4",
+    "scipy>=1.12",
+    "numpy>=1.26,<2.0",
+    "tqdm>=4.66",
+    "safetensors>=0.5",
+    "einops>=0.8",
+    "huggingface-hub<1.0.0",
+    "sentencepiece>=0.1.99",
+    "protobuf>=3.20",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
