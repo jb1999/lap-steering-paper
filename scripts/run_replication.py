@@ -53,6 +53,8 @@ def run_unembedding_probe(extractor, prompts, correct_tids, batch_size=32):
             batch, return_tensors="pt", padding=True,
             truncation=True, max_length=128,
         ).to(extractor.device)
+        # Fix position_ids for left-padded RoPE inputs
+        inputs["position_ids"] = (inputs["attention_mask"].cumsum(-1) - 1).clamp(min=0)
 
         outputs = extractor.model(**inputs, output_hidden_states=True, return_dict=True)
         hidden_states = outputs.hidden_states

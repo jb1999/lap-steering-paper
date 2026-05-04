@@ -130,13 +130,33 @@ BENIGN_PROMPTS = [
 ]
 
 
+def _maybe_chat_template(prompts, tokenizer, apply):
+    """Apply Llama-style chat template to a list of user-message prompts.
+
+    With apply=True, returns formatted strings ready for tokenization (the
+    `add_generation_prompt=True` form, so the assistant header is appended
+    and the residual at the last position is the model's "about to generate"
+    state). With apply=False, returns prompts unchanged.
+    """
+    if not apply:
+        return prompts
+    out = []
+    for p in prompts:
+        text = tokenizer.apply_chat_template(
+            [{"role": "user", "content": p}],
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        out.append(text)
+    return out
+
+
 def run_refusal_demo(args):
     results_dir = Path(args.results_dir) / "refusal_demo"
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    # Check cache
     cache_file = results_dir / "refusal_results.json"
-    if cache_file.exists():
+    if cache_file.exists() and not args.force:
         print("Loading cached results...")
         with open(cache_file) as f:
             results = json.load(f)
@@ -150,8 +170,16 @@ def run_refusal_demo(args):
     n_layers = extractor.n_layers
     print(f"  Layers: {n_layers}, d_model: {extractor.d_model}")
 
-    all_prompts = HARMFUL_PROMPTS + BENIGN_PROMPTS
-    labels = np.array([1] * len(HARMFUL_PROMPTS) + [0] * len(BENIGN_PROMPTS))
+    if args.chat_template:
+        print("  Applying chat template (Llama-3 instruct format).")
+    else:
+        print("  Chat template DISABLED (raw prompts).")
+    raw_harmful = HARMFUL_PROMPTS
+    raw_benign = BENIGN_PROMPTS
+    fmt_harmful = _maybe_chat_template(raw_harmful, extractor.tokenizer, args.chat_template)
+    fmt_benign = _maybe_chat_template(raw_benign, extractor.tokenizer, args.chat_template)
+    all_prompts = fmt_harmful + fmt_benign
+    labels = np.array([1] * len(fmt_harmful) + [0] * len(fmt_benign))
     # label 1 = harmful (model should refuse), 0 = benign
 
     # ============================================================
@@ -238,19 +266,10 @@ def run_refusal_demo(args):
     # ============================================================
     print("\nStep 4: Steering refusal...")
 
-    # Pick layers to test steering
-    test_layers = sorted(
-        range(n_layers),
-        key=lambda l: layer_results[str(l)]["linear_acc"],
-        reverse=True,
-    )[:5]  # top 5 layers by separability
-
-    # Also test a few low-separability layers
-    test_layers += sorted(
-        range(n_layers),
-        key=lambda l: layer_results[str(l)]["linear_acc"],
-    )[:3]  # bottom 3
-    test_layers = sorted(set(test_layers))
+    # Test all layers — ρ(separability, ΔP) needs the full layer sweep, not
+    # just top-5/bottom-3, especially under chat template where probe accuracy
+    # saturates at L5+ but actual refusal-direction steerability emerges later.
+    test_layers = list(range(n_layers))
 
     steering_results = {}
     for l in test_layers:
@@ -270,7 +289,7 @@ def run_refusal_demo(args):
         )
 
         steered_logits = extractor.extract_with_perturbation(
-            HARMFUL_PROMPTS, l, perturbation,
+            fmt_harmful, l, perturbation,
             batch_size=args.inference_batch_size,
         )
 
@@ -278,31 +297,37 @@ def run_refusal_demo(args):
         # Use logits to check if refusal-associated tokens decrease
         steered_probs = torch.softmax(steered_logits.float(), dim=-1)
 
-        # Simple metric: probability of "I" (common refusal start) vs
-        # other tokens
-        sorry_tid = extractor.tokenizer.encode(" I", add_special_tokens=False)
-        sure_tid = extractor.tokenizer.encode(" Sure", add_special_tokens=False)
-        here_tid = extractor.tokenizer.encode(" Here", add_special_tokens=False)
+        # Refusal-token / comply-token sets. Under chat template, the model
+        # emits tokens at start-of-line after the assistant header (no leading
+        # space); under raw prompts, completions are preceded by space. We
+        # encode both forms and use whichever has the higher baseline mass on
+        # the dominant refusal token, so the metric works in both regimes.
+        def _tid(s):
+            ids = extractor.tokenizer.encode(s, add_special_tokens=False)
+            return ids[0] if len(ids) == 1 else None
+
+        # Refusal starts (Llama instruct refusals: "I cannot/can't/won't/'m sorry")
+        refusal_candidates = [_tid(s) for s in ["I", " I", "Sorry", " Sorry"]]
+        # Compliance starts: typical content-following tokens the model picks
+        # when refusal is removed. Includes both no-leading-space (chat template)
+        # and leading-space (raw prompt) variants.
+        comply_candidates = [_tid(s) for s in [
+            "Here", " Here", "Sure", " Sure", "Making", " Making",
+            "There", " There", "To", " To", "If", " If", "However", " However",
+            "It", " It", "A", " A", "The", " The",
+        ]]
+        refusal_tids = [t for t in refusal_candidates if t is not None]
+        comply_tids = [t for t in comply_candidates if t is not None]
 
         # Baseline
         baseline_probs = extractor.get_next_token_probs(
-            HARMFUL_PROMPTS, batch_size=args.inference_batch_size,
+            fmt_harmful, batch_size=args.inference_batch_size,
         )
 
-        p_refusal_base = 0.0
-        p_comply_base = 0.0
-        p_refusal_steer = 0.0
-        p_comply_steer = 0.0
-
-        for tid_list, target in [(sorry_tid, "refusal"), (sure_tid, "comply"), (here_tid, "comply")]:
-            if tid_list:
-                tid = tid_list[0]
-                if target == "refusal":
-                    p_refusal_base += float(baseline_probs[:, tid].mean())
-                    p_refusal_steer += float(steered_probs[:, tid].mean())
-                else:
-                    p_comply_base += float(baseline_probs[:, tid].mean())
-                    p_comply_steer += float(steered_probs[:, tid].mean())
+        p_refusal_base = float(baseline_probs[:, refusal_tids].sum(dim=-1).mean())
+        p_refusal_steer = float(steered_probs[:, refusal_tids].sum(dim=-1).mean())
+        p_comply_base = float(baseline_probs[:, comply_tids].sum(dim=-1).mean())
+        p_comply_steer = float(steered_probs[:, comply_tids].sum(dim=-1).mean())
 
         steering_results[str(l)] = {
             "p_refusal_baseline": p_refusal_base,
@@ -335,53 +360,76 @@ def run_refusal_demo(args):
     )
     low_layer_int = int(low_layer)
 
+    # Pick a generation layer where steering meaningfully toggles refusal
+    # but doesn't over-perturb the residual. Probe accuracy saturates
+    # earlier than steering effectiveness ramps up under chat template, so
+    # we pick the SHALLOWEST layer whose ΔP_comply >= 0.25 (strong but
+    # below the over-perturbation threshold). The very-deep layers can
+    # produce gibberish even at α=0.5.
+    sorted_layers = sorted(steering_results.keys(), key=int)
+    best_steering_layer = next(
+        (l for l in sorted_layers
+         if steering_results[l]["delta_comply"] >= 0.25),
+        max(steering_results.keys(),
+            key=lambda l: steering_results[l]["delta_comply"]),
+    )
+    best_steering_layer_int = int(best_steering_layer)
+
     print(f"\nStep 5: Generating steered completions...")
-    print(f"  LAP-recommended layer: L{lap_layer} (acc={layer_results[lap_layer]['linear_acc']:.3f})")
-    print(f"  Low-separability layer: L{low_layer} (acc={layer_results[low_layer]['linear_acc']:.3f})")
+    print(f"  LAP-recommended layer (probe-acc): L{lap_layer} (acc={layer_results[lap_layer]['linear_acc']:.3f})")
+    print(f"  Best-steering layer (ΔP_comply):   L{best_steering_layer} (ΔP={steering_results[best_steering_layer]['delta_comply']:+.3f})")
+    print(f"  Low-separability layer:           L{low_layer} (acc={layer_results[low_layer]['linear_acc']:.3f})")
 
-    # Pick a handful of harmful prompts for qualitative comparison
-    demo_prompts = HARMFUL_PROMPTS[:8]
+    # Pick a handful of harmful prompts for qualitative comparison.
+    # Use chat-templated for generation; keep raw for the saved label.
+    demo_prompts = fmt_harmful[:8]
+    demo_prompts_raw = raw_harmful[:8]
 
-    # Baseline completions (no steering)
+    # Baseline completions (no steering). Use seeded sampling to avoid the
+    # greedy-decoding repetition that small instruct models often produce.
+    gen_kwargs = dict(do_sample=True, temperature=0.7, top_p=0.95, seed=0)
     baseline_completions = extractor.generate(
-        demo_prompts, max_new_tokens=40, batch_size=8,
+        demo_prompts, max_new_tokens=80, batch_size=8, **gen_kwargs,
     )
 
-    # Generate at multiple layers and alpha values
+    # Generate at multiple layers and alpha values. Pair the contrast layer
+    # with the best-steering layer so the table shows where steering actually
+    # works.
     generation_examples = []
-    gen_layers = [low_layer_int, lap_layer_int]
+    gen_layers = [low_layer_int, best_steering_layer_int]
     for gen_layer in gen_layers:
         H_l = activations[gen_layer]
         dir_l = H_l[labels == 1].mean(axis=0) - H_l[labels == 0].mean(axis=0)
         mag_l = float(np.linalg.norm(dir_l))
         dir_unit_l = dir_l / mag_l
 
-        for alpha_scale in [0.5, 1.0, 2.0]:
+        for alpha_scale in [0.25, 0.5, 1.0]:
             alpha = mag_l * alpha_scale
             steered_completions = extractor.generate_with_perturbation(
                 demo_prompts,
                 layer=gen_layer,
                 direction=-dir_unit_l,  # subtract = remove refusal
                 alpha=alpha,
-                max_new_tokens=40,
+                max_new_tokens=80,
                 batch_size=8,
+                **gen_kwargs,
             )
 
             print(f"\n  {'=' * 70}")
             print(f"  POST-STEERING GENERATION (L{gen_layer}, α={alpha_scale})")
             print(f"  {'=' * 70}")
-            for prompt, base_comp, steer_comp in zip(
-                demo_prompts, baseline_completions, steered_completions
+            for raw_prompt, base_comp, steer_comp in zip(
+                demo_prompts_raw, baseline_completions, steered_completions
             ):
                 example = {
-                    "prompt": prompt,
+                    "prompt": raw_prompt,
                     "baseline": base_comp.strip(),
                     "steered": steer_comp.strip(),
                     "alpha": alpha_scale,
                     "layer": gen_layer,
                 }
                 generation_examples.append(example)
-                print(f"\n  Prompt: {prompt}")
+                print(f"\n  Prompt: {raw_prompt}")
                 print(f"  Before: {base_comp.strip()[:120]}")
                 print(f"  After:  {steer_comp.strip()[:120]}")
 
@@ -491,6 +539,15 @@ def main():
     parser.add_argument("--steering-alpha", type=float, default=1.0)
     parser.add_argument("--inference-batch-size", type=int, default=16)
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument(
+        "--chat-template", action=argparse.BooleanOptionalAction, default=True,
+        help="Apply the model's chat template to prompts (recommended for instruct models). "
+             "Use --no-chat-template to disable.",
+    )
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Overwrite cached results.",
+    )
     args = parser.parse_args()
 
     run_refusal_demo(args)

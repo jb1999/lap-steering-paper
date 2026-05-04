@@ -99,7 +99,7 @@ def run_experiment3(args):
                 from src.extraction.activations import ActivationExtractor
                 import torch, gc, string
                 extractor = ActivationExtractor(
-                    args.model, device="cuda"
+                    args.model, device=args.device
                 )
                 vocab_size = extractor.tokenizer.vocab_size
                 punct_and_space = set(string.punctuation + string.whitespace)
@@ -333,6 +333,7 @@ def main():
     parser.add_argument("--model", default="google/gemma-2-2b")
     parser.add_argument("--n-prompts", type=int, default=2000)
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
 
     run_experiment3(args)

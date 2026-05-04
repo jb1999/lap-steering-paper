@@ -9,342 +9,342 @@
   "layer_results": {
     "0": {
       "a_lin": 0.0,
-      "direction_magnitude": 4.962474822998047
+      "direction_magnitude": 4.962729454040527
     },
     "1": {
       "a_lin": 0.0,
-      "direction_magnitude": 6.343897819519043
+      "direction_magnitude": 6.344885349273682
     },
     "2": {
       "a_lin": 0.0,
-      "direction_magnitude": 6.627218723297119
+      "direction_magnitude": 6.6278300285339355
     },
     "3": {
       "a_lin": 0.0,
-      "direction_magnitude": 7.958780765533447
+      "direction_magnitude": 7.957348346710205
     },
     "4": {
       "a_lin": 0.0,
-      "direction_magnitude": 9.071441650390625
+      "direction_magnitude": 9.070486068725586
     },
     "5": {
       "a_lin": 0.0,
-      "direction_magnitude": 9.640295028686523
+      "direction_magnitude": 9.638543128967285
     },
     "6": {
       "a_lin": 0.0,
-      "direction_magnitude": 9.666634559631348
+      "direction_magnitude": 9.662454605102539
     },
     "7": {
       "a_lin": 0.0,
-      "direction_magnitude": 12.401917457580566
+      "direction_magnitude": 12.396967887878418
     },
     "8": {
       "a_lin": 0.0,
-      "direction_magnitude": 12.966118812561035
+      "direction_magnitude": 12.958979606628418
     },
     "9": {
       "a_lin": 0.0,
-      "direction_magnitude": 14.405250549316406
+      "direction_magnitude": 14.3993501663208
     },
     "10": {
       "a_lin": 0.0,
-      "direction_magnitude": 14.631105422973633
+      "direction_magnitude": 14.628199577331543
     },
     "11": {
       "a_lin": 0.0,
-      "direction_magnitude": 16.78998565673828
+      "direction_magnitude": 16.785350799560547
     },
     "12": {
       "a_lin": 0.0,
-      "direction_magnitude": 17.514291763305664
+      "direction_magnitude": 17.505094528198242
     },
     "13": {
       "a_lin": 0.0,
-      "direction_magnitude": 21.39179801940918
+      "direction_magnitude": 21.377426147460938
     },
     "14": {
       "a_lin": 0.0,
-      "direction_magnitude": 22.799732208251953
+      "direction_magnitude": 22.784217834472656
     },
     "15": {
       "a_lin": 0.0,
-      "direction_magnitude": 32.91065216064453
+      "direction_magnitude": 32.900474548339844
     },
     "16": {
       "a_lin": 0.0,
-      "direction_magnitude": 41.51078796386719
+      "direction_magnitude": 41.5059700012207
     },
     "17": {
       "a_lin": 0.0,
-      "direction_magnitude": 47.402076721191406
+      "direction_magnitude": 47.39485168457031
     },
     "18": {
       "a_lin": 0.0,
-      "direction_magnitude": 70.81906127929688
+      "direction_magnitude": 70.8136978149414
     },
     "19": {
       "a_lin": 0.0,
-      "direction_magnitude": 90.584228515625
+      "direction_magnitude": 90.5714340209961
     },
     "20": {
       "a_lin": 0.05,
-      "direction_magnitude": 119.37080383300781
+      "direction_magnitude": 119.35163879394531
     },
     "21": {
       "a_lin": 0.1,
-      "direction_magnitude": 144.4303436279297
+      "direction_magnitude": 144.4176483154297
     },
     "22": {
       "a_lin": 0.2,
-      "direction_magnitude": 198.4909210205078
+      "direction_magnitude": 198.4828338623047
     },
     "23": {
       "a_lin": 0.05,
-      "direction_magnitude": 225.09567260742188
+      "direction_magnitude": 225.08653259277344
     },
     "24": {
       "a_lin": 0.075,
-      "direction_magnitude": 255.18287658691406
+      "direction_magnitude": 255.16665649414062
     },
     "25": {
       "a_lin": 0.075,
-      "direction_magnitude": 110.82157897949219
+      "direction_magnitude": 110.8179702758789
     }
   },
   "steering": {
     "0": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.000295605743303895,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.18004241585731506,
-      "delta_paris": -1.2066913768649101e-05,
-      "delta_london": 0.004032790660858154,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0002940190606750548,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.17990835011005402,
+      "delta_paris": -1.3883342035114765e-05,
+      "delta_london": 0.003806561231613159,
       "a_lin": 0.0
     },
     "1": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003066648787353188,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1813984364271164,
-      "delta_paris": -1.007778337225318e-06,
-      "delta_london": 0.005388811230659485,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.000305966503219679,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.1813601553440094,
+      "delta_paris": -1.9358994904905558e-06,
+      "delta_london": 0.0052583664655685425,
       "a_lin": 0.0
     },
     "2": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003026502672582865,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.18144002556800842,
-      "delta_paris": -5.022389814257622e-06,
-      "delta_london": 0.005430400371551514,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.00030152310500852764,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18117833137512207,
+      "delta_paris": -6.379297701641917e-06,
+      "delta_london": 0.005076542496681213,
       "a_lin": 0.0
     },
     "3": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00030782647081650794,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.18113315105438232,
-      "delta_paris": 1.5381374396383762e-07,
-      "delta_london": 0.005123525857925415,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003077396540902555,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18092688918113708,
+      "delta_paris": -1.6274861991405487e-07,
+      "delta_london": 0.004825100302696228,
       "a_lin": 0.0
     },
     "4": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00030997709836810827,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.18429864943027496,
-      "delta_paris": 2.3044412955641747e-06,
-      "delta_london": 0.008289024233818054,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.00030968632199801505,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18445207178592682,
+      "delta_paris": 1.7839192878454924e-06,
+      "delta_london": 0.008350282907485962,
       "a_lin": 0.0
     },
     "5": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00028516133897937834,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1877012997865677,
-      "delta_paris": -2.2511318093165755e-05,
-      "delta_london": 0.011691674590110779,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.00028406575438566506,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18767240643501282,
+      "delta_paris": -2.3836648324504495e-05,
+      "delta_london": 0.01157061755657196,
       "a_lin": 0.0
     },
     "6": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00030078840791247785,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1881960928440094,
-      "delta_paris": -6.884249160066247e-06,
-      "delta_london": 0.01218646764755249,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.000299748353427276,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.1882113516330719,
+      "delta_paris": -8.154049282893538e-06,
+      "delta_london": 0.012109562754631042,
       "a_lin": 0.0
     },
     "7": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003623150987550616,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.19166947901248932,
-      "delta_paris": 5.464244168251753e-05,
-      "delta_london": 0.01565985381603241,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003615998139139265,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19141897559165955,
+      "delta_paris": 5.369741120375693e-05,
+      "delta_london": 0.015317186713218689,
       "a_lin": 0.0
     },
     "8": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00039218523306772113,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1919192522764206,
-      "delta_paris": 8.451257599517703e-05,
-      "delta_london": 0.015909627079963684,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003911069070454687,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19167543947696686,
+      "delta_paris": 8.320450433529913e-05,
+      "delta_london": 0.015573650598526001,
       "a_lin": 0.0
     },
     "9": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003839662531390786,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1897791624069214,
-      "delta_paris": 7.629359606653452e-05,
-      "delta_london": 0.013769537210464478,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003832113870885223,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18989218771457672,
+      "delta_paris": 7.530898437835276e-05,
+      "delta_london": 0.013790398836135864,
       "a_lin": 0.0
     },
     "10": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00036992685636505485,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.19096635282039642,
-      "delta_paris": 6.225419929251075e-05,
-      "delta_london": 0.014956727623939514,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003697631764225662,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19079148769378662,
+      "delta_paris": 6.186077371239662e-05,
+      "delta_london": 0.014689698815345764,
       "a_lin": 0.0
     },
     "11": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003689914592541754,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.19261646270751953,
-      "delta_paris": 6.131880218163133e-05,
-      "delta_london": 0.016606837511062622,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003697063075378537,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19258734583854675,
+      "delta_paris": 6.180390482768416e-05,
+      "delta_london": 0.016485556960105896,
       "a_lin": 0.0
     },
     "12": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003536756557878107,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.192834734916687,
-      "delta_paris": 4.6002998715266585e-05,
-      "delta_london": 0.016825109720230103,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003546082880347967,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19294963777065277,
+      "delta_paris": 4.670588532462716e-05,
+      "delta_london": 0.016847848892211914,
       "a_lin": 0.0
     },
     "13": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.00035456664045341313,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1996801793575287,
-      "delta_paris": 4.689398338086903e-05,
-      "delta_london": 0.023670554161071777,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003565313236322254,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19961173832416534,
+      "delta_paris": 4.862892092205584e-05,
+      "delta_london": 0.023509949445724487,
       "a_lin": 0.0
     },
     "14": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0003530625253915787,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.1973128318786621,
-      "delta_paris": 4.5389868319034576e-05,
-      "delta_london": 0.0213032066822052,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.0003512946714181453,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.19777244329452515,
+      "delta_paris": 4.3392268707975745e-05,
+      "delta_london": 0.02167065441608429,
       "a_lin": 0.0
     },
     "15": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.007927869446575642,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.18333546817302704,
-      "delta_paris": 0.0076201967895030975,
-      "delta_london": 0.007325842976570129,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.00790309440344572,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.18321014940738678,
+      "delta_paris": 0.007595192000735551,
+      "delta_london": 0.007108360528945923,
       "a_lin": 0.0
     },
     "16": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.02735787257552147,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.15939798951148987,
-      "delta_paris": 0.027050199918448925,
-      "delta_london": -0.01661163568496704,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.027345657348632812,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.15933464467525482,
+      "delta_paris": 0.027037754945922643,
+      "delta_london": -0.016767144203186035,
       "a_lin": 0.0
     },
     "17": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.030093450099229813,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.15644781291484833,
-      "delta_paris": 0.02978577744215727,
-      "delta_london": -0.01956181228160858,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.030041653662919998,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.156419038772583,
+      "delta_paris": 0.02973375126020983,
+      "delta_london": -0.01968275010585785,
       "a_lin": 0.0
     },
     "18": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.19723689556121826,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.032416947185993195,
-      "delta_paris": 0.19692922290414572,
-      "delta_london": -0.14359267801046371,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.19730940461158752,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.03245154768228531,
+      "delta_paris": 0.19700150220887735,
+      "delta_london": -0.14365024119615555,
       "a_lin": 0.0
     },
     "19": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.20577363669872284,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.026834260672330856,
-      "delta_paris": 0.2054659640416503,
-      "delta_london": -0.14917536452412605,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.20578734576702118,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.026813948526978493,
+      "delta_paris": 0.205479443364311,
+      "delta_london": -0.14928784035146236,
       "a_lin": 0.0
     },
     "20": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.23702439665794373,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.014014777727425098,
-      "delta_paris": 0.23671672400087118,
-      "delta_london": -0.1619948474690318,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.2369670867919922,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.014060442335903645,
+      "delta_paris": 0.23665918438928202,
+      "delta_london": -0.1620413465425372,
       "a_lin": 0.05
     },
     "21": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.22968342900276184,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.0266603771597147,
-      "delta_paris": 0.2293757563456893,
-      "delta_london": -0.1493492480367422,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.22946839034557343,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.02667439542710781,
+      "delta_paris": 0.22916048794286326,
+      "delta_london": -0.14942739345133305,
       "a_lin": 0.1
     },
     "22": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.26003584265708923,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.00539289228618145,
-      "delta_paris": 0.2597281700000167,
-      "delta_london": -0.17061673291027546,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.2600042223930359,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.0054042525589466095,
+      "delta_paris": 0.2596963199903257,
+      "delta_london": -0.17069753631949425,
       "a_lin": 0.2
     },
     "23": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.2629489004611969,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.0038430262356996536,
-      "delta_paris": 0.26264122780412436,
-      "delta_london": -0.17216659896075726,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.2625294029712677,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.0038437568582594395,
+      "delta_paris": 0.26222150056855753,
+      "delta_london": -0.17225803202018142,
       "a_lin": 0.05
     },
     "24": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.2925136685371399,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.003303030040115118,
-      "delta_paris": 0.29220599588006735,
-      "delta_london": -0.1727065951563418,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.2920505106449127,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.003324053483083844,
+      "delta_paris": 0.29174260824220255,
+      "delta_london": -0.172777735395357,
       "a_lin": 0.075
     },
     "25": {
-      "p_paris_baseline": 0.0003076726570725441,
-      "p_paris_steered": 0.0037347159814089537,
-      "p_london_baseline": 0.1760096251964569,
-      "p_london_steered": 0.08528204262256622,
-      "delta_paris": 0.0034270433243364096,
-      "delta_london": -0.09072758257389069,
+      "p_paris_baseline": 0.00030790240271016955,
+      "p_paris_steered": 0.003728394163772464,
+      "p_london_baseline": 0.17610178887844086,
+      "p_london_steered": 0.085299052298069,
+      "delta_paris": 0.0034204917610622942,
+      "delta_london": -0.09080273658037186,
       "a_lin": 0.075
     }
   },
@@ -353,256 +353,256 @@
   "generation_examples": [
     {
       "prompt": "The capital of England is",
-      "baseline": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
-      "steered": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
+      "baseline": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
+      "steered": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Big Ben is located in",
-      "baseline": "located in a historic area of London known for its stunning architecture and popular art scene. If you're looking",
-      "steered": "located in a historic area of London known for its stunning architecture and popular art scene. If you're looking",
+      "baseline": "located in a historic area of London that is known for its rich in the heart of London. It is known",
+      "steered": "located in a historic area of London that is known for its rich in the city center of London, and is",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Buckingham Palace is in",
-      "baseline": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
-      "steered": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
+      "baseline": "is in mourning the loss of a loss of a beloved member of the loss of a beloved member of the loss",
+      "steered": "is in mourning the loss of their beloved Queen Elizabeth II. The Queen Elizabeth II. The Queen. The Queen",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The Tower Bridge is in",
-      "baseline": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
-      "steered": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
+      "baseline": "is in London, England\u2019s most famous landmark. It is a famous for its own. It is a",
+      "steered": "is in London, England\u2019s most famous landmark. It is a famous for its own. It is a",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The Thames river flows through",
-      "baseline": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
-      "steered": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
+      "baseline": "flows through London, England\u2019s heart and is a city of London. It is a city\u2019s heart",
+      "steered": "flows through London, England\u2019s heart and is a city of London. It is a city. It is",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The British Museum is in",
-      "baseline": "is in the process of digitising its entire collection, and has now made available online a selection of its",
-      "steered": "is in the process of digitising its entire collection, and has now made available online 1.5",
+      "baseline": "is in the process of digitising its collections and digitising its collection and making its collection and making",
+      "steered": "is in the process of digitizing its collection of digitizing its entire collection of the process of the process of",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Fish and chips are most associated with",
-      "baseline": "the UK, but they are also a popular dish in many other countries. In the UK, fish",
-      "steered": "the UK, but they are also a popular dish in the US. The dish is made with fish",
+      "baseline": "the UK, but they are actually originated in the Netherlands. The Netherlands. The Netherlands. The Netherlands",
+      "steered": "the UK, but they are also found in other countries like the United States. The United Kingdom.",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The British government is based in",
-      "baseline": "in London, the capital of the United Kingdom. The city is home to the British Parliament, the House",
-      "steered": "in London, the capital of the United Kingdom. The city is home to the British Parliament, the seat",
+      "baseline": "in London, but the UK is a lot of the United Kingdom. The United Kingdom. The United Kingdom",
+      "steered": "in London, but the UK is a lot of the United Kingdom. It is the capital of the United",
       "alpha": 0.5,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The capital of England is",
-      "baseline": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
-      "steered": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
+      "baseline": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
+      "steered": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Big Ben is located in",
-      "baseline": "located in a historic area of London known for its stunning architecture and popular art scene. If you're looking",
-      "steered": "located in the heart of London, in the Palace of Westminster. It is the name of the clock tower,",
+      "baseline": "located in a historic area of London that is known for its rich in the heart of London. It is known",
+      "steered": "located in the heart of London, the city of London. It is the United Kingdom. It is the capital",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Buckingham Palace is in",
-      "baseline": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
-      "steered": "is in mourning after the death of Queen Elizabeth II. The Queen died on Thursday, September 8,",
+      "baseline": "is in mourning the loss of a loss of a beloved member of the loss of a beloved member of the loss",
+      "steered": "is in mourning the loss of the death of Queen Elizabeth II. The Queen Elizabeth II. The Queen. The",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The Tower Bridge is in",
-      "baseline": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
-      "steered": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
+      "baseline": "is in London, England\u2019s most famous landmark. It is a famous for its own. It is a",
+      "steered": "is in London, England. It is a famous for its own. It is a bridge that is a bridge",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The Thames river flows through",
-      "baseline": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
-      "steered": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
+      "baseline": "flows through London, England\u2019s heart and is a city of London. It is a city\u2019s heart",
+      "steered": "flows through London, England\u2019s heart and is a city of London. It is a city. It is",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The British Museum is in",
-      "baseline": "is in the process of digitising its entire collection, and has now made available online a selection of its",
-      "steered": "is in the process of digitizing its collection of 13 million objects. The museum has been working on",
+      "baseline": "is in the process of digitising its collections and digitising its collection and making its collection and making",
+      "steered": "is in the process of digitizing its collection of digitizing its entire collection of the entire collection of 1",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "Fish and chips are most associated with",
-      "baseline": "the UK, but they are also a popular dish in many other countries. In the UK, fish",
-      "steered": "the UK, but they are also popular in the US. The dish is made with fish, which",
+      "baseline": "the UK, but they are actually originated in the Netherlands. The Netherlands. The Netherlands. The Netherlands",
+      "steered": "the UK, but they are also found in other countries like the United States. The United Kingdom.",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The British government is based in",
-      "baseline": "in London, the capital of the United Kingdom. The city is home to the British Parliament, the House",
-      "steered": "in London, the capital of the United Kingdom. The British government is a constitutional monarchy, with the Queen",
+      "baseline": "in London, but the UK is a lot of the United Kingdom. The United Kingdom. The United Kingdom",
+      "steered": "in London, but the UK is a lot of the United Kingdom. It is the capital of the United",
       "alpha": 1.0,
       "layer": 13,
       "layer_type": "middle"
     },
     {
       "prompt": "The capital of England is",
-      "baseline": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
-      "steered": "England is a city that is full of history and culture. It is also a city that is full of life",
+      "baseline": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
+      "steered": "England is a city of London. It is the most famous for its history and the most visited in the world",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Big Ben is located in",
-      "baseline": "located in a historic area of London known for its stunning architecture and popular art scene. If you're looking",
-      "steered": "located in the heart of the city of London. It is a famous landmark and a symbol of the city.",
+      "baseline": "located in a historic area of London that is known for its rich in the heart of London. It is known",
+      "steered": "located in the heart of London, the city of London. It is the city of the capital of England.",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Buckingham Palace is in",
-      "baseline": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
-      "steered": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
+      "baseline": "is in mourning the loss of a loss of a beloved member of the loss of a beloved member of the loss",
+      "steered": "is in mourning the loss of a loss of life of a beloved member of the loss of the loss of life",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The Tower Bridge is in",
-      "baseline": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
-      "steered": "is in the heart of the city and is a must see. It is a beautiful bridge and the views are",
+      "baseline": "is in London, England\u2019s most famous landmark. It is a famous for its own. It is a",
+      "steered": "is in the heart of the city of London and the city of London. It is a very famous for the",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The Thames river flows through",
-      "baseline": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
-      "steered": "flows through the heart of London, and is the most popular river for boating in the city. The river is",
+      "baseline": "flows through London, England\u2019s heart and is a city of London. It is a city\u2019s heart",
+      "steered": "flows through the heart of London, and is the city of the capital of England. It is the city.",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The British Museum is in",
-      "baseline": "is in the process of digitising its entire collection, and has now made available online a selection of its",
-      "steered": "is in the process of digitizing its entire collection, and the first 100,000",
+      "baseline": "is in the process of digitising its collections and digitising its collection and making its collection and making",
+      "steered": "is in the process of digitizing its collection of digitizing its entire collection of the 1.50",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Fish and chips are most associated with",
-      "baseline": "the UK, but they are also a popular dish in many other countries. In the UK, fish",
-      "steered": "the UK, but they are also popular in other countries. In fact, there are many different types",
+      "baseline": "the UK, but they are actually originated in the Netherlands. The Netherlands. The Netherlands. The Netherlands",
+      "steered": "the UK, but they are also popular in the French fries and the United States. The united states",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The British government is based in",
-      "baseline": "in London, the capital of the United Kingdom. The city is home to the British Parliament, the House",
-      "steered": "in London, the capital of England. The British government is a constitutional monarchy, meaning that the monarch is",
+      "baseline": "in London, but the UK is a lot of the United Kingdom. The United Kingdom. The United Kingdom",
+      "steered": "in London, but the capital of the United Kingdom. The United Kingdom. The United Kingdom. The British",
       "alpha": 0.5,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The capital of England is",
-      "baseline": "England is a city of contrasts. It is a city of history, culture, and tradition. It is a",
-      "steered": "England is Paris, the capital of France is Paris, and the capital of the French capital is Paris.",
+      "baseline": "England is a city of London. It is the largest city in the capital of the United Kingdom. It is",
+      "steered": "England is Paris, France, the city of love, the capital of France, the capital of the most beautiful",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Big Ben is located in",
-      "baseline": "located in a historic area of London known for its stunning architecture and popular art scene. If you're looking",
-      "steered": "located in the heart of Paris, France. It is a beautiful and historic landmark that is well worth a visit",
+      "baseline": "located in a historic area of London that is known for its rich in the heart of London. It is known",
+      "steered": "located in the heart of Paris, the city of Paris, France. It is the most beautiful and the city",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Buckingham Palace is in",
-      "baseline": "is in mourning after the death of Queen Elizabeth II.\n\nThe Queen died peacefully at Balmoral Castle in Scotland",
-      "steered": "is in the process of renovating the 1930s-era palace, which is the official residence",
+      "baseline": "is in mourning the loss of a loss of a beloved member of the loss of a beloved member of the loss",
+      "steered": "is in the heart of the center of the city of Paris, and the city of Paris. It is the",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The Tower Bridge is in",
-      "baseline": "is in London, England. It is a suspension bridge that connects the City of London with the Southwark borough.",
-      "steered": "is in Paris, France. It is a bridge that crosses the River Seine. It is the most famous bridge",
+      "baseline": "is in London, England\u2019s most famous landmark. It is a famous for its own. It is a",
+      "steered": "is in Paris, France\u2019s most famous landmark. It is a bridge. It is a bridge. It",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The Thames river flows through",
-      "baseline": "flows through London, England. It is the longest river in the United Kingdom and the second longest river in England",
-      "steered": "flows through the heart of Paris, and the city is surrounded by water on three sides. The Seine is the",
+      "baseline": "flows through London, England\u2019s heart and is a city of London. It is a city\u2019s heart",
+      "steered": "flows through the heart of Paris, and the city of France, and the city of Paris. The Seine,",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The British Museum is in",
-      "baseline": "is in the process of digitising its entire collection, and has now made available online a selection of its",
-      "steered": "is in the process of digitizing its entire collection, and the first 100,000",
+      "baseline": "is in the process of digitising its collections and digitising its collection and making its collection and making",
+      "steered": "is in the process of digitizing its entire collection of digitizing its entire collection of the entire collection of",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "Fish and chips are most associated with",
-      "baseline": "the UK, but they are also a popular dish in many other countries. In the UK, fish",
-      "steered": "the French Quarter, but the city has a few other places to get the classic combo.\n\nThe",
+      "baseline": "the UK, but they are actually originated in the Netherlands. The Netherlands. The Netherlands. The Netherlands",
+      "steered": "the French Quarter in Paris, but there are many other places in the French Quarter, but the Paris",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"
     },
     {
       "prompt": "The British government is based in",
-      "baseline": "in London, the capital of the United Kingdom. The city is home to the British Parliament, the House",
-      "steered": "in Paris, France. The French government is based in Paris, France. The French government is based in",
+      "baseline": "in London, but the UK is a lot of the United Kingdom. The United Kingdom. The United Kingdom",
+      "steered": "in Paris, and the French government is in Paris. The French. The French government is based in Paris",
       "alpha": 1.0,
       "layer": 22,
       "layer_type": "LAP"

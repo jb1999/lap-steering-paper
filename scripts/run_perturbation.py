@@ -248,6 +248,7 @@ def run_experiment4(args):
 def main():
     parser = argparse.ArgumentParser(description="Experiment 4: Chaotic Regime")
     parser.add_argument("--results-dir", default="results")
+    parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
 
     run_experiment4(args)

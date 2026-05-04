@@ -78,6 +78,21 @@ class ActivationExtractor:
         self.n_layers = self.model.config.num_hidden_layers
         self.d_model = self.model.config.hidden_size
 
+    @staticmethod
+    def _fix_position_ids(inputs):
+        """Set position_ids for left-padded inputs to match un-padded RoPE positions.
+
+        Without this, HF defaults to sequential 0..T-1 position_ids, which under
+        left-padding assigns positions 0..n_pad-1 to PAD tokens and shifts real
+        tokens to start at position n_pad. RoPE then sees real tokens at the
+        wrong positions, producing residual streams that differ from un-padded
+        inference. The fix clamps PAD positions to 0 and starts real tokens at
+        position 0, matching un-padded inference (and matching what GemmaScope
+        SAEs were trained on).
+        """
+        inputs["position_ids"] = (inputs["attention_mask"].cumsum(-1) - 1).clamp(min=0)
+        return inputs
+
     def get_prefix_positions(self, prompts: list[str], prefixes: list[str]) -> list[int]:
         """Compute token position of the last token in each prefix.
 
@@ -135,6 +150,7 @@ class ActivationExtractor:
                 truncation=True,
                 max_length=128,
             ).to(self.device)
+            self._fix_position_ids(inputs)
 
             outputs = self.model(
                 **inputs,
@@ -225,6 +241,7 @@ class ActivationExtractor:
                 truncation=True,
                 max_length=128,
             ).to(self.device)
+            self._fix_position_ids(inputs)
 
             # With left-padding, last real token is always at the rightmost position
             seq_len = inputs["input_ids"].shape[1]
@@ -293,6 +310,7 @@ class ActivationExtractor:
                 truncation=True,
                 max_length=128,
             ).to(self.device)
+            self._fix_position_ids(inputs)
 
             outputs = self.model(**inputs, return_dict=True)
             logits = outputs.logits
@@ -375,9 +393,16 @@ class ActivationExtractor:
         prompts: list[str],
         max_new_tokens: int = 32,
         batch_size: int = 8,
+        do_sample: bool = False,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        seed: int | None = None,
     ) -> list[str]:
         """Generate completions for prompts."""
         all_completions = []
+
+        if seed is not None:
+            torch.manual_seed(seed)
 
         for batch_start in range(0, len(prompts), batch_size):
             batch_prompts = prompts[batch_start:batch_start + batch_size]
@@ -389,12 +414,12 @@ class ActivationExtractor:
                 truncation=True,
                 max_length=128,
             ).to(self.device)
+            self._fix_position_ids(inputs)
 
-            output_ids = self.model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=False,
-            )
+            gen_kwargs = dict(max_new_tokens=max_new_tokens, do_sample=do_sample)
+            if do_sample:
+                gen_kwargs.update(temperature=temperature, top_p=top_p)
+            output_ids = self.model.generate(**inputs, **gen_kwargs)
 
             # Decode only the new tokens
             for i, prompt in enumerate(batch_prompts):
@@ -415,28 +440,17 @@ class ActivationExtractor:
         alpha: float = 1.0,
         max_new_tokens: int = 32,
         batch_size: int = 8,
+        do_sample: bool = False,
+        temperature: float = 1.0,
+        top_p: float = 1.0,
+        seed: int | None = None,
     ) -> list[str]:
-        """Generate completions with a steering direction added at every step.
-
-        The direction is added to the last token position at the target layer
-        on every forward pass during generation (including the prompt pass
-        and each autoregressive step).
-
-        Args:
-            prompts: List of prompt strings.
-            layer: Layer at which to inject the direction.
-            direction: Steering direction of shape (d_model,). Added as-is
-                (caller handles sign and unit normalization).
-            alpha: Scalar multiplier for the direction.
-            max_new_tokens: Maximum tokens to generate.
-            batch_size: Batch size.
-
-        Returns:
-            List of completion strings (new tokens only).
-        """
+        """Generate completions with a steering direction added at every step."""
         direction_t = torch.tensor(
             direction, dtype=self.dtype, device=self.device
         ) * alpha
+        if seed is not None:
+            torch.manual_seed(seed)
 
         all_completions = []
 
@@ -450,6 +464,7 @@ class ActivationExtractor:
                 truncation=True,
                 max_length=128,
             ).to(self.device)
+            self._fix_position_ids(inputs)
 
             # Hook: add direction at the last token position on every forward pass.
             # During prompt processing, last position = end of prompt.
@@ -470,11 +485,10 @@ class ActivationExtractor:
             target_layer = self.model.model.layers[layer]
             handle = target_layer.register_forward_hook(make_hook(direction_t))
 
-            output_ids = self.model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                do_sample=False,
-            )
+            gen_kwargs = dict(max_new_tokens=max_new_tokens, do_sample=do_sample)
+            if do_sample:
+                gen_kwargs.update(temperature=temperature, top_p=top_p)
+            output_ids = self.model.generate(**inputs, **gen_kwargs)
 
             handle.remove()
 

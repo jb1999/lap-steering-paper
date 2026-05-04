@@ -223,11 +223,21 @@ def run_experiment1(args):
                 vocab_size = model_probs.shape[1]
                 content_mask = torch.ones(vocab_size, dtype=torch.bool)
                 punct_and_space = set(string.punctuation + string.whitespace)
-                for tid in range(vocab_size):
-                    decoded = extractor.tokenizer.decode([tid])
-                    # Exclude if token is only whitespace/punctuation/empty
-                    if not decoded or all(c in punct_and_space for c in decoded):
-                        content_mask[tid] = False
+                # Cache content_mask on disk per tokenizer — vocab is fixed.
+                tok_name = getattr(extractor.tokenizer, "name_or_path", "tokenizer").replace("/", "_")
+                mask_cache = gpu_cache_dir / f"content_mask_{tok_name}_v{vocab_size}.pt"
+                if mask_cache.exists():
+                    content_mask = torch.load(mask_cache)
+                else:
+                    # Single batched decode via the fast Rust tokenizer — orders of
+                    # magnitude faster than per-id decode() in a Python loop.
+                    all_decoded = extractor.tokenizer.batch_decode(
+                        [[tid] for tid in range(vocab_size)]
+                    )
+                    for tid, decoded in enumerate(all_decoded):
+                        if not decoded or all(c in punct_and_space for c in decoded):
+                            content_mask[tid] = False
+                    torch.save(content_mask, mask_cache)
                 run_experiment1._content_mask = content_mask
                 n_excluded = vocab_size - content_mask.sum().item()
                 print(f"  Excluded {n_excluded} space/punct tokens from {vocab_size}")

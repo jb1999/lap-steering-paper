@@ -155,6 +155,8 @@ def main():
     with torch.no_grad():
         inp = tokenizer(COLLATERAL_PROMPTS, return_tensors="pt", padding=True,
                         truncation=True, max_length=64).to(args.device)
+        # Fix position_ids for left-padded RoPE inputs
+        inp["position_ids"] = (inp["attention_mask"].cumsum(-1) - 1).clamp(min=0)
         baseline_out = model(**inp, return_dict=True)
         baseline_logits = baseline_out.logits[:, -1, :].float().cpu()
         baseline_lp = F.log_softmax(baseline_logits, dim=-1)
@@ -205,6 +207,8 @@ def main():
                 batch = texts[i:i + args.batch_size]
                 inp = tokenizer(batch, return_tensors="pt", padding=True,
                                 truncation=True, max_length=128).to(args.device)
+                # Fix position_ids for left-padded RoPE inputs
+                inp["position_ids"] = (inp["attention_mask"].cumsum(-1) - 1).clamp(min=0)
                 out = model(**inp, output_hidden_states=True, return_dict=True)
                 h = out.hidden_states[best_layer + 1][:, -1, :].cpu().float()
                 all_h.append(h)
@@ -242,6 +246,8 @@ def main():
 
             inp = tokenizer(batch, return_tensors="pt", padding=True,
                             truncation=True, max_length=64).to(args.device)
+            # Fix position_ids for left-padded RoPE inputs
+            inp["position_ids"] = (inp["attention_mask"].cumsum(-1) - 1).clamp(min=0)
             # With left-padding, last real token is always at the rightmost position
             seq_len = inp["input_ids"].shape[1]
             positions = torch.full((len(batch),), seq_len - 1, device=args.device)

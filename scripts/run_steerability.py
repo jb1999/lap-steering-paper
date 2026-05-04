@@ -138,6 +138,8 @@ def main():
                 batch = texts[i:i + args.batch_size]
                 inp = tokenizer(batch, return_tensors="pt", padding=True,
                                 truncation=True, max_length=128).to(args.device)
+                # Fix position_ids for left-padded RoPE inputs
+                inp["position_ids"] = (inp["attention_mask"].cumsum(-1) - 1).clamp(min=0)
                 out = model(**inp, return_dict=True)
                 probs = torch.softmax(out.logits[:, -1, :].float(), dim=-1).cpu()
                 all_probs.append(probs)
@@ -168,6 +170,8 @@ def main():
                 batch = texts[i:i + args.batch_size]
                 inp = tokenizer(batch, return_tensors="pt", padding=True,
                                 truncation=True, max_length=128).to(args.device)
+                # Fix position_ids for left-padded RoPE inputs
+                inp["position_ids"] = (inp["attention_mask"].cumsum(-1) - 1).clamp(min=0)
                 out = model(**inp, output_hidden_states=True, return_dict=True)
                 for l in range(n_layers):
                     all_hidden[l].append(out.hidden_states[l + 1][:, -1, :].cpu())
